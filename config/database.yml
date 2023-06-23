@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: everest_beta_development
+  username: postgres
+  password: 100%Good
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +60,8 @@ development:
 test:
   <<: *default
   database: everest_beta_test
+  username: postgres
+  password: 100%Good
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,5 +86,5 @@ test:
 production:
   <<: *default
   database: everest_beta_production
-  username: everest_beta
+  username: everest
   password: <%= ENV["EVEREST_BETA_DATABASE_PASSWORD"] %>
