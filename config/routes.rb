@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get 'home/index' 
   # resources :home
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 end
 
 # Rails.application.routes.draw do
+  # resources :categories
 #   get 'expenses/index'
 #   get 'categories/index'
 #   get 'home/index'

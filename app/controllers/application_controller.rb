@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(User)
       # Redirect to a specific path for a user
       # user_path(resource)
-      root_path
+      categories_path
     else
       # Redirect to a different path for other resources
       root_path
