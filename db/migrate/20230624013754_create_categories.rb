@@ -4,8 +4,10 @@ class CreateCategories < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :emoji
       t.integer :limit
+      t.references :user, foreign_key: { to_table: :users }
 
       t.timestamps
     end
   end
 end
+

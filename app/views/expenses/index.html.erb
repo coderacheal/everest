@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<main>
+
+  <div class='category-transaction'>
+    <div>
+      <div class='category-and-total-amount'>
+        <p class='total-amount'><%= category_name = @category.name %> </p> 
+        <p class='total-amount'>Total Amount: <%= number_to_currency(@total_amount) %> </p> 
+      </div>
+    </div>
+  </div>
+
+  <div class='add_categories_div'>
+    <% @expenses.each do |expense| %>
+    <div class='expense-card'>
+      <div class='expense-name-amout'>
+        <p><%= expense.name %></p>
+        <p><%= number_to_currency(expense.amount) %></p>
+      </div>
+        <p class='expense-date'><%= expense.created_at.strftime('%B %d, %Y') %></p>
+    </div>
+    <% end %>
+  </div>
+
+
+  <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %> 
+</main>
+
+

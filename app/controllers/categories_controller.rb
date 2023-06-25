@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = current_user.categories
   end
 
   # GET /categories/1 or /categories/1.json
@@ -21,18 +21,14 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    @category = current_user.categories.new(category_params)
+    if @category.save
+      redirect_to categories_path(author_id: current_user.id)
+    else
+      render :new
     end
   end
+
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
