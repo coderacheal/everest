@@ -5,8 +5,7 @@
 <div id="categories">
   <% @categories.each do |category| %>
     <%= render category %>
-    <p>
-    </p>
+    <%= link_to "Edit Category", edit_category_path(id: category.id) %>
   <% end %>
 </div>
 
