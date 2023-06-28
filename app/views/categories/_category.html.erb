@@ -1,4 +1,15 @@
 <div id="<%= dom_id category %>">
+  <%# <%= image_tag rails_blob_path(category.user.avatar), alt: "Description of the image" %> %>
+  <%# <%= image_tag category.user.avatar, class: 'category-image' if category.user.avatar.attached? %> %>
+  <% if category.user.present? && category.user.avatar.attached? %>
+    <%= image_tag url_for(category.user.avatar), class: 'category-image' %>
+  <% else %>
+    <!-- Placeholder image if user or avatar is not present -->
+    
+    <%# <%= image_tag 'placeholder.png', class: 'category-image' %> %>
+  <% end %>
+
+
   <p>
   <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
   </p>

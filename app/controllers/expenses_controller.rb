@@ -20,20 +20,53 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/1/edit
   def edit
+    @category = Category.find(params[:category_id])
+    @expense = Expense.find(params[:id])
   end
+  
+  
 
   # POST /expenses or /expenses.json
+  # def create
+  #   @expense = @category.expenses.build(expense_params)
+  
+  #   @expense.amount ||= 0
+  #   @total_amount ||= 0
+  
+  #   if @expense.amount + @total_amount > @category.limit
+  #     render :new
+  #   else
+  #     if @expense.save
+  #       @category.expenses << @expense
+  #       redirect_to category_expenses_path
+  #     else
+  #       render :new
+  #     end
+  #   end
+  # end
+
   def create
     @expense = @category.expenses.build(expense_params)
-    @expense.save
-    if @expense.save
-      @category.expenses << @expense
-
-      redirect_to category_expenses_path
-    else
+  
+    @category_expenses = @category.expenses.to_a
+    # @category_expenses << @expense
+  
+    total_expenses_amount = @category_expenses.sum(&:amount)
+  
+    if total_expenses_amount > @category.limit
+      flash.now[:error] = "Total expenses in this category exceed the limit."
       render :new
+    else
+      if @expense.save
+        @category.expenses << @expense
+        redirect_to category_expenses_path
+      else
+        render :new
+      end
     end
   end
+  
+  
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :categories
+  has_many :expenses
   has_one_attached :avatar
 
   validates :name, length: { maximum: 50 }

@@ -19,12 +19,19 @@
         <p><%= number_to_currency(expense.amount) %></p>
       </div>
         <p class='expense-date'><%= expense.created_at.strftime('%B %d, %Y') %></p>
+        <%= link_to "Edit this expense", edit_category_expense_path(category_id: @category.id, id: expense.id) %> |
     </div>
     <% end %>
   </div>
 
+    <% if @total_amount >= @category.limit %>
+      <p>You cannot add another expense</p> <!-- Assuming you have an attribute called expenses_total on the category model that represents the total expenses for the category -->
+    <% else %>
+      <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %>
+    <% end %>
 
-  <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %> 
+<%# <% if @total_amount >= @category.limit %>
+  <%# <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %>  %> %>
 </main>
 
 
