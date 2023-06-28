@@ -1,12 +1,12 @@
 class UserController < ApplicationController
 
     def index
-        @user = current_user
+      @user = current_user
     end
 
-    private
+    # private
 
-    def category_params
-      params.require(:category).permit(:name, :image)
-    end
+    # def category_params
+    #   params.require(:category).permit(:name, :image)
+    # end
 end
