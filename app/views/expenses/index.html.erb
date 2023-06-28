@@ -1,3 +1,5 @@
+<%= link_to "Home", categories_path %>
+
 <p style="color: green"><%= notice %></p>
 
 <main>
@@ -7,6 +9,7 @@
       <div class='category-and-total-amount'>
         <p class='total-amount'><%= category_name = @category.name %> </p> 
         <p class='total-amount'>Total Amount: <%= number_to_currency(@total_amount) %> </p> 
+        <p class='total-amount'>Amount Remaining: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
       </div>
     </div>
   </div>
@@ -21,7 +24,6 @@
         <p class='expense-date'><%= expense.created_at.strftime('%B %d, %Y') %></p>
         <%= button_to 'Delete', category_expense_path(@category, expense), method: :delete, class: 'category_delete_botton' %>
 
-        <%# <%= link_to "Edit this expense", edit_category_expense_path(category_id: @category.id, id: expense.id) | %> %>
         <%= link_to "Edit this expense", edit_category_expense_path(category_id: @category.id, id: expense.id) %>
 
     </div>
