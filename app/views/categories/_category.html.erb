@@ -8,7 +8,11 @@
   </p>
 
   <p>
-    <%= category.limit %>
+   Limit: <%=  category.limit %>
+  </p>
+  <% total_amount = category.expenses.sum(:amount) %>
+  <p>
+   Remaining: <%= (category.limit - total_amount) %>
   </p>
 
 </div>
