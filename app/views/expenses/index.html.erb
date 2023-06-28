@@ -19,6 +19,8 @@
         <p><%= number_to_currency(expense.amount) %></p>
       </div>
         <p class='expense-date'><%= expense.created_at.strftime('%B %d, %Y') %></p>
+        <%= button_to 'Delete', category_expense_path(@category, expense), method: :delete, class: 'category_delete_botton' %>
+
         <%# <%= link_to "Edit this expense", edit_category_expense_path(category_id: @category.id, id: expense.id) | %> %>
         <%= link_to "Edit this expense", edit_category_expense_path(category_id: @category.id, id: expense.id) %>
 

@@ -11,7 +11,10 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/1 or /expenses/1.json
   def show
+    @category = Category.find(params[:category_id])
+    @expense = @category.expenses.find(params[:id])
   end
+  
 
   # GET /expenses/new
   def new
@@ -74,8 +77,16 @@ class ExpensesController < ApplicationController
 
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
+    @expense = Expense.find(params[:id])
     @expense.destroy
+    redirect_to category_expense_path
   end
+
+  # def destroy
+  #   @category = Category.find(params[:id])
+  #   @category.destroy
+  #   redirect_to categories_path
+  # end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_category
