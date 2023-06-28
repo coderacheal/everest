@@ -7,12 +7,14 @@
     <%= category.emoji %>
   </p>
 
+  
+
   <p>
-   Limit: <%=  category.limit %>
+   Limit: <%= number_to_currency(category.limit)%>
   </p>
   <% total_amount = category.expenses.sum(:amount) %>
   <p>
-   Remaining: <%= (category.limit - total_amount) %>
+   Remaining: <%= number_to_currency((category.limit - total_amount)) %>
   </p>
 
 </div>

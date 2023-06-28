@@ -22,9 +22,17 @@
   </div>
 
   <div>
+    <%= form.text_area :message %>
+    <%= emojione_area(form, :message) %>
+  </div>
+
+  <div>
     <%= form.label :limit, style: "display: block" %>
     <%= form.number_field :limit %>
   </div>
+
+  <%# <%= form.text_field :message %>
+  <%# <%= emoji_picker(form, :message) %> 
 
   <div>
     <%= form.submit %>

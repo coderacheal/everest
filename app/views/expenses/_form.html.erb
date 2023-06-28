@@ -1,4 +1,3 @@
-<%# <%= form_with(model: expense) do |form| %> %>
 <%= form_with(model: expense, url: category_expense_path(@category, expense), local: true) do |form| %>
   <% if expense.errors.any? %>
     <div style="color: red">
@@ -11,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
 
   <div>
     <%= form.submit %>

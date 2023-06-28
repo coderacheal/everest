@@ -46,6 +46,10 @@ gem "bootsnap", require: false
 
 gem 'activestorage'
 
+# gem 'emoji-picker-rails'
+gem 'emojionearea-rails'
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

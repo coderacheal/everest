@@ -4,14 +4,16 @@
 <h1>Categories</h1>
 
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <%= link_to "Edit Category", edit_category_path(id: category.id) %>
-    <%= button_to 'Delete', category_path(category), method: :delete, class: 'category_delete_botton' %>
-
+    <% if @categories.empty?%>
+      <p>You have no categories yet</p>
+    <% else %>
+      <% @categories.each do |category| %>
+        <%= render category %>
+        <%= link_to "Edit Category", edit_category_path(id: category.id) %>
+        <%= button_to 'Delete', category_path(category), method: :delete, class: 'category_delete_botton' %>
+    <% end %>
   <% end %>
 </div>
 <br>
-<%= link_to "New category", new_category_path %>
-<%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %>
+<%= link_to "Add Category", new_category_path %>
 
