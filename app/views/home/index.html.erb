@@ -1,11 +1,21 @@
-
-<main>
-  <div class='login_signup'>
-    <p class='session'><%= link_to "Log in", new_user_session_path, class: 'session_text_login' %> </p>
-    <p class='session register'><%= link_to "Sign up", new_user_registration_path, class: 'session_text_signup' %> </p>
+<div class='splash'>
   <div>
-  <div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= image_tag 'bg-img.jpg', class: 'image' %>
   </div>
-</main>
+  <div class='login_signup'>
+    <div class='login-wrapper'>
+      <h1>EVEREST</h1>
+      <p>Plan with <b>EVEREST</b> Stay on top of the dollar...</p>
+      <ul>
+        <li>Step 1 - Create a category</li>
+        <li>Step 2 - Set a limit</li>
+        <li>Step 3 - Add expenses to each category</li>
+        <li>Step 4 - Track your analytics</li>
+      </ul>
+      <div class='links-signup-div'>
+        <p class='session'><%= link_to "Log in", new_user_session_path, class: 'session_text_login' %></p>
+        <p class='session register'><%= link_to "Sign up", new_user_registration_path, class: 'session_text_signup' %></p>
+      </div>
+    </div>
+  </div>
+</div>
