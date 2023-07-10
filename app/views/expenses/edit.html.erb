@@ -7,5 +7,12 @@
 <div>
   <%= link_to "Back to expenses", category_expenses_path(@category) %>
   <%= alert %>
+
+  <% if flash[:notice] %>
+  <div class="flash notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 </div>
 

@@ -37,13 +37,16 @@ class CategoriesController < ApplicationController
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
-    respond_to do |format|
+    @category = Category.find(params[:id]) 
+  
+    if @category.expenses.sum(:amount) > params[:category][:limit].to_i
+      flash.now[:notice] = "Category limit exceeded. Please adjust expenses."
+      render :edit
+    else
       if @category.update(category_params)
-        format.html { redirect_to category_url(@category), notice: "Category was successfully updated." }
-        format.json { render :show, status: :ok, location: @category }
+        redirect_to categories_path
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+        render :edit
       end
     end
   end
@@ -55,14 +58,23 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
+  # In your server-side code (e.g., Rails controller or helper)
+  def generate_color(category_name)
+    colors = ['#FF0000', '#00FF00', '#0000FF']  # Example color palette
+    index = category_name.length % colors.length
+    colors[index]
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_category
-      @category = Category.find(params[:id])
-    end
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name, :emoji, :limit)
-    end
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name, :emoji, :limit)
+  end
+
 end
