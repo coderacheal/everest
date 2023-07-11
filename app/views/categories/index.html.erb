@@ -1,19 +1,37 @@
-<%= render partial: 'shared/nav' %>
-<p style="color: green"><%= notice %></p>
+<div class='category-index'>
+  <div class='category-card'>
+    <div class='grid-80'>
+      <%= render partial: 'shared/nav' %>
+        <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
-
-<div id="categories">
-    <% if @categories.empty?%>
-      <p>You have no categories yet</p>
-    <% else %>
-      <% @categories.each do |category| %>
-        <%= render category %>
-        <%= link_to "Edit Category", edit_category_path(id: category.id) %>
-        <%= button_to 'Delete', category_path(category), method: :delete, class: 'category_delete_botton' %>
-    <% end %>
-  <% end %>
+        <h3>Categories</h3>
+        <%= link_to "Add Category", new_category_path %>
+        <div id="categories">
+            <% if @categories.empty?%>
+              <p>You have no categories yet</p>
+            <% else %>
+              <% @categories.each do |category| %>
+                <div class='eachCategory'>
+                  <div>
+                    <%= render category %>
+                  </div>
+                  <div class='delete-edit'>
+                    <%= link_to "Edit", edit_category_path(id: category.id) %>
+                    <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %>
+                  </div>
+                </div>
+            <% end %>
+          <% end %>
+        </div>
+        <br>
+    </div>
+    <div class='grid-20'>
+      <p>Hello</p>
+    </div>
+  </div>
+  
+  
 </div>
-<br>
-<%= link_to "Add Category", new_category_path %>
+
+
 

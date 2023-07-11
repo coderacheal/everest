@@ -1,0 +1,86 @@
+.category-index {
+  display: flex;
+  background-color: mistyrose;
+  height: 100vh;
+  align-items: center;
+}
+
+.category-index p {
+  margin: 0;
+}
+
+.category-card {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  height: 85vh;
+  width: 80vw;
+  margin: auto;
+  background-color: aliceblue;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 30px;
+}
+
+.grid-80 {
+  background-color: aliceblue;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.grid-20 {
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.category-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.eachCategory {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.eachCategoryDetails {
+  width: 90%;
+  margin: auto;
+  
+}
+
+.delete-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+.category-name-date {
+  display: flex;
+  gap: 40px;
+}
+
+.category-date {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.limit-balance {
+  color: grey;
+}
+
+
+.category_delete_botton {
+  background-color: aliceblue;
+  border: 0;
+  padding: 10px;
+  border-radius: 7px;
+}
