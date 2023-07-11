@@ -1,39 +1,46 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field  :name, autofocus: true, autocomplete: "name" %>
-  </div>
-
-   <div class="field">
-      <%= f.label :avatar %><br />
-      <%= f.file_field :avatar %>
+<div class='session-body'>
+  <div class='session-page'>
+    <div>
+      <%= image_tag 'budget.jpg', class: 'session-image' %>
     </div>
+    <div class='session-form'>
+      <h2>Sign up</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <div class="field">
+          <%= f.text_field  :name, autofocus: true, autocomplete: "name", class: 'session-form-input', placeholder: 'Name'%>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <div class="field">
+            <%= f.label :Photo %><br />
+            <%= f.file_field :avatar, placeholder: 'Avatar', class: 'session-form-input' %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'session-form-input', placeholder: 'Email' %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "new-password", class: 'session-form-input', placeholder: 'Enter Password' %>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'session-form-input', placeholder: 'Re-enter Password' %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: 'session-sign-up' %>
+          <%= render "devise/shared/links", class: 'session-sign-up' %>
+        </div>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+      <% end %>
+      
+</div>
+    </div>
+    
+  
+
+</div>
+

@@ -18,10 +18,12 @@
  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
  body {
-    background-image: url('../images/brooke-lark-V4MBq8kue3U-unsplash.jpg');
+    /* background-image: url('../images/brooke-lark-V4MBq8kue3U-unsplash.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    
   }
   
 
