@@ -29,10 +29,12 @@
 
 .session-form {
   display: flex;
+  width: 80%;
   flex-direction: column;
   align-content: center;
   align-items: center;
   margin: auto;
+  /* background-color: red */
   
 }
 
@@ -55,13 +57,26 @@ h2 {
 .session-sign-up {
   text-decoration: none;
   color: white;
-  padding: 7px 5px;
+  padding: 7px 10px;
   background-color: rgb(0, 46, 214);
   background-color: rgb(2, 196, 57);
   border-radius: 15px;
   border: 0;
   font-size: 16px;
   margin-right: 30px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
+
+.session-form-input {
+  padding: 10px 5px;
+  outline: none;
+  border: 0;
+  background-color: #f5f5f5;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+
 
 
