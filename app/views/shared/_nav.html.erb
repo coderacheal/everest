@@ -11,3 +11,18 @@
       </div><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %>
     </nav>
 </header>
+
+<header>
+  <nav class="nav">
+    <p><%= link_to 'Home', categories_path, class: 'back-sign' %></p>
+    <div class="name-image-div">
+      <% if user_signed_in? %>
+        <%= image_tag(current_user.avatar, class: "avatar") if current_user.avatar.attached? %>
+      <% end %>
+      <div>
+        <p class="username"><%= current_user.name %></p>
+      </div>
+    </div>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %>
+  </nav>
+</header>
