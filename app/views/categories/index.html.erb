@@ -5,7 +5,8 @@
         <p style="color: green"><%= notice %></p>
 
         <h3>Categories</h3>
-        <%= link_to "Add Category", new_category_path %>
+        <p> <%=  DateTime.now.strftime('%B %d, %Y')%> </p>
+        
         <div id="categories">
             <% if @categories.empty?%>
               <p>You have no categories yet</p>
@@ -26,11 +27,23 @@
         <br>
     </div>
     <div class='grid-20'>
-      <p>Hello</p>
+      <p><%= link_to "Add Category", new_category_path %></p>
+      <div>
+        <% if @categories.empty?%>
+          <p>You have no categories yet</p>
+        <% else %>
+          <p>You have <%= @categories.length %> <%=  'category'.pluralize(@categories.length) %></p>
+          <p>Total amount for all categories is <%= number_to_currency(@categories.sum(:limit)) %></p>
+        <% end %>
+        <div>
+          <% @categories.each do |category| %>
+            <p><%= category.name %> </p>
+            <p>No of transactions <%= category.expenses.length %> </p>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-  
-  
 </div>
 
 

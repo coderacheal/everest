@@ -1,6 +1,7 @@
-.category-index {
+.category-index, .expense-index {
   display: flex;
   background-color: mistyrose;
+  background-color: #ffd6c9;
   height: 100vh;
   align-items: center;
 }
@@ -32,12 +33,32 @@
   border-top-right-radius: 20px;
 }
 
-.category-details {
+.category-details, .expense-details {
   display: flex;
   justify-content: space-around;
 }
 
+.expense-details {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
 .eachCategory {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.eachExpense {
   display: grid;
   grid-template-columns: 85% 15%;
   align-items: center;
