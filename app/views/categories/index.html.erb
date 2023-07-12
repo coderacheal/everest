@@ -10,6 +10,7 @@
         <div id="categories">
             <% if @categories.empty?%>
               <p>You have no categories yet</p>
+              <p><%= link_to "Add Category", new_category_path %></p>
             <% else %>
               <% @categories.each do |category| %>
                 <div class='eachCategory'>
@@ -27,6 +28,12 @@
         <br>
     </div>
     <div class='grid-20'>
+      <li>
+        <% if user_signed_in? %>
+          <%= image_tag(current_user.avatar, class: "avatar") if current_user.avatar.attached? %>
+        <% end %>
+      </li>
+      <p class="username"><%= current_user.name %></p>
       <p><%= link_to "Add Category", new_category_path %></p>
       <div>
         <% if @categories.empty?%>
