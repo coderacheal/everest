@@ -3,14 +3,10 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories.includes(:expenses) # Retrieve categories for the current user and eager load associated expenses
+    @categories = current_user.categories.includes(:expenses)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
   
-  # def index
-  #   @category_expenses = Expense.where(category_id: params[:category_id])
-   
-  # end
-
   # GET /categories/1 or /categories/1.json
   def show
   end

@@ -3,11 +3,9 @@
     <div class='grid-80'>
       <%= render partial: 'shared/nav' %>
         <p style="color: green"><%= notice %></p>
-
-        <h3>Categories</h3>
         <p> <%=  DateTime.now.strftime('%B %d, %Y')%> </p>
-        
-        <div id="categories">
+        <p><%= link_to "Add Category", new_category_path %></p>
+        <div id="categories" class="allCategories">
             <% if @categories.empty?%>
               <p>You have no categories yet</p>
               <p><%= link_to "Add Category", new_category_path %></p>
@@ -19,7 +17,7 @@
                   </div>
                   <div class='delete-edit'>
                     <%= link_to "Edit", edit_category_path(id: category.id) %>
-                    <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %>
+                    <p class="fade-text"> <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %> </p>
                   </div>
                 </div>
             <% end %>
@@ -28,25 +26,44 @@
         <br>
     </div>
     <div class='grid-20'>
-      <li>
+      <div>
         <% if user_signed_in? %>
           <%= image_tag(current_user.avatar, class: "avatar") if current_user.avatar.attached? %>
         <% end %>
-      </li>
-      <p class="username"><%= current_user.name %></p>
-      <p><%= link_to "Add Category", new_category_path %></p>
-      <div>
-        <% if @categories.empty?%>
-          <p>You have no categories yet</p>
-        <% else %>
-          <p>You have <%= @categories.length %> <%=  'category'.pluralize(@categories.length) %></p>
-          <p>Total amount for all categories is <%= number_to_currency(@categories.sum(:limit)) %></p>
-        <% end %>
+        <p class="username"><%= current_user.name %></p>
         <div>
-          <% @categories.each do |category| %>
-            <p><%= category.name %> </p>
-            <p>No of transactions <%= category.expenses.length %> </p>
+          <% if @categories.empty?%>
+          <p>You have no categories yet</p>
+          <% else %>
+            <p>You have <%= @categories.length %> <%= 'category'.pluralize(@categories.length) %></p>
+            <p>Total amount for all categories is <%= number_to_currency(@categories.sum(:limit)) %></p>
           <% end %>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="mini-add-option">
+            <h3>Categories</h3>
+            <p><%= link_to "+", new_category_path %></p>
+          </div>
+          <div>
+            <p>Latest Categories</p>
+          </div>
+          <div class="latest-categories">
+            <% @latest.each do |category| %>
+              <div class="type-and-number">
+                <div>
+                  <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
+                  <p class="fade-text spent"> <%= number_to_currency(category.expenses.sum(:amount)) %> Spent</p>
+                </div>
+                  <% if category.expenses.length == 0%>
+                    <p class="fade-text">No expense</p>
+                    <% else%>
+                    <p class="fade-text"><%= category.expenses.length %> <%= 'Item'.pluralize(category.expenses.count) %></p>
+                  <%end%>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
