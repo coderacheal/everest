@@ -1,36 +1,37 @@
-<div class='expense-index'>
+<div class='category-index'>
   <div class='category-card'>
     <div class='grid-80'>
-      <%= render partial: 'shared/nav' %> <p style="color: green"><%= notice %></p>
-      <div class='category-transaction'>
-        <div>
+      <%= render partial: 'shared/nav' %>
+        <p style="color: green"><%= notice %></p>
+        <div class="add-category-div">
+          <% if @total_amount >= @category.limit %>
+          <p>You cannot add another expense, you have reached your limit for <%= @category.name %></p> 
+          <% else %>
+            <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %>
+          <% end %>
           <div class='category-and-total-amount'>
             <p class='total-amount'><%= category_name = @category.name %> </p> 
             <p class='total-amount'>Total Amount: <%= number_to_currency(@total_amount) %> </p> 
             <p class='total-amount'>Amount Remaining: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
           </div>
         </div>
-      </div>
-      <div class=''>
-        <% @expenses.each do |expense| %>
-        <div class='eachExpense'>
-          <div class='expense-name-amout'>
-            <p><%= expense.name %></p>
-            <p><%= number_to_currency(expense.amount) %></p>
-          </div>
-            <p class='expense-date'><%= expense.created_at.strftime('%B %d, %Y') %></p>
-            <%= link_to "Edit", edit_category_expense_path(category_id: @category.id, id: expense.id) %>
-            <%= button_to 'Delete', category_expense_path(@category, expense), method: :delete, class: 'category_delete_botton' %>
-          </div>
-        <% end %>
-      </div>
-      <% if @total_amount >= @category.limit %>
-      <p>You cannot add another expense, you have reached your limit for <%= @category.name %></p> 
-      <% else %>
-        <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %>
-      <% end %>
+        <div id="categories" class="allCategories">
+            <% @expenses.each do |expense| %>
+            <div class='eachExpense'>
+              <div class='expense-name-amout'>
+                <p><%= expense.name %></p>
+                <p><%= number_to_currency(expense.amount) %></p>
+              </div>
+                <p class='expense-date'><%= expense.created_at.strftime('%B %d, %Y') %></p>
+                <%= link_to "Edit", edit_category_expense_path(category_id: @category.id, id: expense.id) %>
+                <%= button_to 'Delete', category_expense_path(@category, expense), method: :delete, class: 'category_delete_botton' %>
+            </div>
+            <% end %>
+        </div>
+        <br>
     </div>
     <%= render partial: 'shared/grid-20' %>
+  </div>
 </div>
 
 

@@ -12,16 +12,14 @@
   <% end %>
 
   <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-input"%>
   </div>
 
   <div>
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+    <%= form.number_field :amount, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="add-category-div">
+    <%= form.submit class: "submit-button" %>
   </div>
 <% end %>
