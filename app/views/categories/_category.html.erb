@@ -1,5 +1,4 @@
 <div id="<%= dom_id category %>"  class='category-details'>
-
   <div class='category-name-date' >
     <p class="generate-category-avatar" style="background-color: rgb(227, 163, 248)"><%= category.name[0].upcase %></p>
     <div class='category-date'>
@@ -7,7 +6,6 @@
       <p>Created <%= category.created_at.strftime('%B %e, %Y') %></p>
     </div>
   </div>
-
   <div class='limit-balance'>
     <p>
       Limit: <%= number_to_currency(category.limit)%>
@@ -21,6 +19,4 @@
       <% end %>
     </p>
   </div>
-  
-
 </div>

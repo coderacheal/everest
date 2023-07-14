@@ -7,7 +7,11 @@ class ExpensesController < ApplicationController
     @category_expenses = Expense.where(category_id: params[:category_id])
     @expenses = @category.expenses.includes(:user).order(created_at: :desc)
     @total_amount = @expenses.sum(:amount)
+    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
+
+
 
   # GET /expenses/1 or /expenses/1.json
   def show
@@ -23,6 +27,8 @@ class ExpensesController < ApplicationController
     # @category_expenses = Expense.where(category_id: params[:category_id])
     @category_expenses = @category.expenses.to_a
     @total_amount = @category_expenses.sum(&:amount)
+    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
 
