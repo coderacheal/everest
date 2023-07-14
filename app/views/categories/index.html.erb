@@ -3,8 +3,9 @@
     <div class='grid-80'>
       <%= render partial: 'shared/nav' %>
         <p style="color: green"><%= notice %></p>
-        <p> <%=  DateTime.now.strftime('%B %d, %Y')%> </p>
-        <p><%= link_to "Add Category", new_category_path %></p>
+        <div class="add-category-div">
+          <p class=""><%= link_to "Add New Category", new_category_path , class: 'add-new-category'%></p>
+        </div>
         <div id="categories" class="allCategories">
             <% if @categories.empty?%>
               <p>You have no categories yet</p>
@@ -25,50 +26,7 @@
         </div>
         <br>
     </div>
-    <div class='grid-20'>
-      <div class="">
-        <div class="profile-name">
-          <% if user_signed_in? %>
-            <%= image_tag(current_user.avatar, class: "avatar") if current_user.avatar.attached? %>
-          <% end %>
-          <p class="username"><%= current_user.name %></p>
-        </div>
-        
-        <div class="quick-stats">
-          <% if @categories.empty?%>
-          <p>You have no categories yet</p>
-          <% else %>
-            <p>You have <%= @categories.length %> <%= 'category'.pluralize(@categories.length) %></p>
-            <p>Total categories budget <%= number_to_currency(@categories.sum(:limit)) %></p>
-          <% end %>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div class="mini-add-option">
-            <p class='latest-categories-ribbon'>Latest Categories</p>
-            <p><%= link_to "+", new_category_path %></p>
-          </div>
-          <div>
-          </div>
-          <div class="latest-categories">
-            <% @latest.each do |category| %>
-              <div class="type-and-number">
-                <div>
-                  <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
-                  <p class="fade-text spent"> <%= number_to_currency(category.expenses.sum(:amount)) %> Spent</p>
-                </div>
-                  <% if category.expenses.length == 0%>
-                    <p class="fade-text spent">No expense</p>
-                    <% else%>
-                    <p class="fade-text spent"><%= category.expenses.length %> <%= 'Item'.pluralize(category.expenses.count) %></p>
-                  <%end%>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+     <%= render partial: 'shared/grid-20' %>
   </div>
 </div>
 

@@ -1,14 +1,8 @@
-/* .avatar {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-} */
-
 .generate-category-avatar {
     display: flex;
     align-self: center;
     border-radius: 25%;
     color: white;
-    padding: 15px;
+    padding: 10px 15px;
     font-size: 20px;
 }

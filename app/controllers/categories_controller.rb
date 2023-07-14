@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :set_category, only: %i[ edit update destroy ]
 
   # GET /categories or /categories.json
   def index
@@ -8,12 +8,14 @@ class CategoriesController < ApplicationController
   end
   
   # GET /categories/1 or /categories/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /categories/new
   def new
     @category = Category.new
+    @categories = current_user.categories.includes(:expenses)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
   # GET /categories/1/edit
