@@ -23,6 +23,8 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
+    # @category_expenses = @category.expenses.to_a
+    # @category_expenses = Expense.where(category_id: params[:category_id])
     @category_expenses = @category.expenses.to_a
     @total_amount = @category_expenses.sum(&:amount)
     @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
@@ -34,8 +36,6 @@ class ExpensesController < ApplicationController
   def edit
     @category = Category.find(params[:category_id])
     @expense = Expense.find(params[:id])
-    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
   # POST /expenses or /expenses.json
@@ -81,6 +81,10 @@ class ExpensesController < ApplicationController
       render :edit
     end
   end
+  
+  
+  
+  
   
 
   # DELETE /expenses/1 or /expenses/1.json

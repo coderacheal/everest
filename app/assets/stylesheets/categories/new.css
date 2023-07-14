@@ -10,7 +10,7 @@
   background-color: white;
   width: 50%;
   margin: auto;
-  padding: 50px;
+  padding: 70px;
   align-items: center;
   align-content: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -31,12 +31,12 @@ h3 {
 }
 
 
-/* .add-category-div {
+.add-category-div {
   display: flex;
   justify-content: right;
   margin: 0;
   width: 80%;
-} */
+}
 
 .submit-button {
   display: block;

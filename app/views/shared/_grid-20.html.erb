@@ -11,8 +11,8 @@
       <% if @categories.empty?%>
       <p>You have no categories yet</p>
       <% else %>
-        <p class="fade-text">You have <%= @categories.length %> <%= 'category'.pluralize(@categories.length) %></p>
-        <p class="fade-text">Total categories budget <%= number_to_currency(@categories.sum(:limit)) %></p>
+        <p>You have <%= @categories.length %> <%= 'category'.pluralize(@categories.length) %></p>
+        <p>Total categories budget <%= number_to_currency(@categories.sum(:limit)) %></p>
       <% end %>
     </div>
   </div>
@@ -29,7 +29,7 @@
           <div class="type-and-number">
             <div>
               <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
-              <p class="fade-text spent"> <%= number_to_currency(category.expenses.sum(:amount)) %> spent</p>
+              <p class="fade-text spent"> <%= number_to_currency(category.expenses.sum(:amount)) %> Spent</p>
             </div>
               <% if category.expenses.length == 0%>
                 <p class="fade-text spent">No expense</p>

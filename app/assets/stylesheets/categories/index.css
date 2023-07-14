@@ -40,25 +40,25 @@
 }
 
 .generate-category-avatar {
-  color: rgb(94, 94, 94);
+  /* display: flex; */
+  /* align-self: center; */
   border-radius: 25%;
+  /* color: white; */
   padding: 10px 15px;
   font-size: 20px;
 }
 
 .add-category-div {
-  display: flex;
-  justify-content: flex-end;
+  display: block;
+  text-align: right;
   width: 60%;
-  margin: 50px auto;
+  margin: auto;
+  /* margin-bottom: 20px; */
+  margin-top: 10%;
 }
 
-.allCategories {
-  align-items: center;
-  height: 58%;
-  width: 90%;
-  margin-top: 0%;
-  overflow-y: auto;
+.date-add-category-div:nth-child(2) {
+  padding-right: 50px;
 }
 
 .category-details, .expense-details {
@@ -72,6 +72,13 @@
   background-color: white;
 }
 
+.allCategories {
+  align-items: center;
+  height: 58%;
+  width: 90%;
+  margin-top: 10%;
+  overflow-y: auto;
+}
 
 .eachCategory {
   display: grid;
@@ -87,9 +94,24 @@
   align-items: center;
 }
 
+.eachExpense {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
 .eachCategoryDetails {
   width: 90%;
   margin: auto;
+  
 }
 
 .delete-edit {
@@ -120,9 +142,6 @@
   color: rgb(173, 173, 173);
 }
 
-
-/* 20% grid */
-
 .avatar {
   width: 40px;
   height: 40px;
@@ -135,7 +154,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid rgb(237, 230, 230) ;
+  border-top: 2px dashed rgb(237, 230, 230) ;
   padding-top: 40px;
 }
 
@@ -154,12 +173,6 @@
   /* background-color: rgb(227, 163, 248); */
   padding: 10px;
   border-radius: 5px;
-
-}
-
-.category_name {
-  color: rgb(95, 93, 93);
-  text-decoration: none;
 
 }
 
@@ -195,13 +208,12 @@
 }
 
 .plus-category {
-  border: 2px dashed rgb(237, 230, 230);;
-  padding: 0 10px;
+  border: 2px dashed gray;
+  padding: 3px 10px;
   border-radius: 9px;
   font-size: 30px;
   text-decoration: none;
-  /* color: rgb(147, 145, 145); */
-  color: rgb(237, 230, 230);
+  color: rgb(147, 145, 145)
 
 }
 

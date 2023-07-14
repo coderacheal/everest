@@ -3,7 +3,7 @@
     <p class="generate-category-avatar" style="background-color: rgb(227, 163, 248)"><%= category.name[0].upcase %></p>
     <div class='category-date'>
       <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
-      <p class='fade-text spent'>Created <%= category.created_at.strftime('%B %e, %Y') %></p>
+      <p>Created <%= category.created_at.strftime('%B %e, %Y') %></p>
     </div>
   </div>
   <div class='limit-balance'>

@@ -1,21 +1,18 @@
-<div class='category-index'>
-  <div class='category-card'>
-    <div class='grid-80'>
-      <%= render partial: 'shared/nav' %>
-      <div class="form-div">
-        <h3>Editing expense</h3>
-        <%= render "form", expense: @expense %>
-      </div>
-    </div>
-    <%= render partial: 'shared/grid-20' %>
-  </div>
-</div>
+<h1>Editing expense</h1>
 
+<%= render "form", expense: @expense %>
 
-
+<br>
 
 <div>
   <%= link_to "Back to expenses", category_expenses_path(@category) %>
   <%= alert %>
-</div> 
+
+  <% if flash[:notice] %>
+  <div class="flash notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+</div>
 
