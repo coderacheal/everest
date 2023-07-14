@@ -20,6 +20,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    @categories = current_user.categories.includes(:expenses)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
   # POST /categories or /categories.json
