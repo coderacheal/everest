@@ -4,7 +4,7 @@
       <%= render partial: 'shared/nav' %>
         <p style="color: green"><%= notice %></p>
         <div class="add-category-div">
-          <p class=""><%= link_to "Add New Category", new_category_path , class: 'add-new-category'%></p>
+          <p class=""><%= link_to "Add New Category", new_category_path , class: 'submit-button'%></p>
         </div>
         <div id="categories" class="allCategories">
             <% if @categories.empty?%>
