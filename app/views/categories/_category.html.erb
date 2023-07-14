@@ -14,7 +14,11 @@
     </p>
     <% total_amount = category.expenses.sum(:amount) %>
     <p>
-      Balance: <%= number_to_currency((category.limit - total_amount)) %>
+      <% if category.limit.present? %>
+        Balance: <%= number_to_currency(category.limit - total_amount) %>
+      <% else %>
+        Balance: N/A
+      <% end %>
     </p>
   </div>
   

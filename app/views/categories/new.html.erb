@@ -2,10 +2,10 @@
   <div class='category-card'>
     <div class='grid-80'>
       <%= render partial: 'shared/nav' %>
-      <%= render "form", category: @category %>
-      <%= link_to "Back to categories", categories_path %>
+      <div class="new-category-form">
+        <%= render "form", category: @category %>
+      </div>
     </div>
     <%= render partial: 'shared/grid-20' %>
-  <div>
+  </div>
 </div>
-

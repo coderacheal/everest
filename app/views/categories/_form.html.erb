@@ -1,32 +1,18 @@
-<%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="form-div">
+  <%= form_with(model: category) do |form| %>
+    <h3>Add new category</h3>
 
-      <ul>
-        <% category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div>
+      <%= form.text_field :name, class: "form-input", placeholder: 'Name'%>
+    </div>
+
+    <div>
+      <%= form.number_field :limit, class: "form-input", placeholder: 'Limit' %>
+    </div>
+
+    <div class="add-category-div">
+      <%= form.submit class: "add-category-button" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <%# <div> %>
-    <%# <%= form.label :emoji, style: "display: block" %> 
-    <%# <%= form.text_field :emoji %> 
-  <%# </div> %>
-
-  <div>
-    <%= form.label :limit, style: "display: block" %>
-    <%= form.number_field :limit %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+ 

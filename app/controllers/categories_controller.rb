@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories.includes(:expenses)
+    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
     @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
   

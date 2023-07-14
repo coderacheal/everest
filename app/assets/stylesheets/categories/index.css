@@ -44,8 +44,8 @@
   text-align: right;
   width: 60%;
   margin: auto;
-  margin-bottom: 20px;
-  margin-top: 7vh;
+  /* margin-bottom: 20px; */
+  margin-top: 10%;
 }
 
 .date-add-category-div:nth-child(2) {
@@ -65,9 +65,9 @@
 
 .allCategories {
   align-items: center;
-  height: 60%;
+  height: 58%;
   width: 90%;
-  margin-top: 3%;
+  margin-top: 10%;
   overflow-y: auto;
 }
 

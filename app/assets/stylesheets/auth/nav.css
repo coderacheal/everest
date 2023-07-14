@@ -6,11 +6,11 @@
   width: 50%;
 }
 
-.nav-sign-out, .add-new-category {
+.nav-sign-out {
   text-decoration: none;
   border: 0;
   color: white;
-  padding: 10px;
+  padding: 5px;
   background-color: rgb(41, 187, 82);
   border-radius: 15px;
 }
