@@ -1,0 +1,16 @@
+<div class="">
+  <%= form_with(model: category) do |form| %>
+    <div>
+      <%= form.text_field :name, class: "form-input", placeholder: 'Name'%>
+    </div>
+
+    <div>
+      <%= form.number_field :limit, class: "form-input", placeholder: 'Limit' %>
+    </div>
+
+    <div class="add-category-div">
+      <%= form.submit class: "submit-button" %>
+    </div>
+  <% end %>
+</div>
+ 

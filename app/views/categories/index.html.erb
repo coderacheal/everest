@@ -1,0 +1,34 @@
+<div class='category-index'>
+  <div class='category-card'>
+    <div class='grid-80'>
+      <%= render partial: 'shared/nav' %>
+        <p style="color: green"><%= notice %></p>
+        <div class="add-category-div">
+          <p class=""><%= link_to "Add New Category", new_category_path , class: 'add-new-category'%></p>
+        </div>
+        <div id="categories" class="allCategories">
+            <% if @categories.empty?%>
+              <p>You have no categories yet</p>
+              <p><%= link_to "Add Category", new_category_path %></p>
+            <% else %>
+              <% @categories.each do |category| %>
+                <div class='eachCategory'>
+                  <div>
+                    <%= render category %>
+                  </div>
+                  <div class='delete-edit'>
+                    <%= link_to "Edit", edit_category_path(id: category.id) %>
+                    <p class="fade-text"> <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %> </p>
+                  </div>
+                </div>
+            <% end %>
+          <% end %>
+        </div>
+        <br>
+    </div>
+    <%= render partial: 'shared/grid-20' %>
+  </div>
+</div>
+
+
+

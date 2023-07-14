@@ -1,0 +1,77 @@
+.splash {
+  display: flex;
+}
+
+.image {
+  width: 50vw;
+  height: 80vh;
+  margin-top: 10vh;
+}
+
+
+.login_signup {
+  text-align: center;
+  height: 72vh;
+  width: 35vw;
+  margin: auto;
+  margin-top: 15vh;
+  background-color: #f5f5f5;
+}
+
+.login-wrapper {
+  width: 80%;
+  justify-content: center;
+  gap: 30px;
+  margin: auto;
+  margin-top: 15vh;
+  text-align: center;
+
+}
+
+.login-wrapper h1 {
+  font-size: 45px;
+  font-weight: 200;
+  color: rgb(55, 124, 74);
+}
+
+.login-wrapper p {
+  font-size: 18px;
+  font-weight: 200;
+  color: rgb(55, 124, 74);
+}
+
+.login-wrapper ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 70px;
+  font-size: 18px;
+  text-align: left;
+  font-weight: 100;
+}
+
+.login-wrapper ul li {
+  font-weight: 100;
+}
+
+.links-signup-div{
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  gap: 30px;
+  margin: auto;
+  text-align: center;
+  margin-top: 8vh;
+
+}
+
+.session_text_login,
+.session_text_signup {
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: rgb(0, 46, 214);
+  background-color: rgb(2, 196, 57);
+  border-radius: 15px;
+}

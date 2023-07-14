@@ -1,0 +1,44 @@
+<div class='grid-20'>
+  <div class="">
+    <div class="profile-name">
+      <% if user_signed_in? %>
+        <%= image_tag(current_user.avatar, class: "avatar") if current_user.avatar.attached? %>
+      <% end %>
+      <p class="username"><%= current_user.name %></p>
+    </div>
+    
+    <div class="quick-stats">
+      <% if @categories.empty?%>
+      <p>You have no categories yet</p>
+      <% else %>
+        <p>You have <%= @categories.length %> <%= 'category'.pluralize(@categories.length) %></p>
+        <p>Total categories budget <%= number_to_currency(@categories.sum(:limit)) %></p>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div class="mini-add-option">
+        <p class='latest-categories-ribbon'>Latest Categories</p>
+        <p ><%= link_to "+", new_category_path,  class: "plus-category"%></p>
+      </div>
+      <div>
+      </div>
+      <div class="latest-categories">
+        <% @latest.each do |category| %>
+          <div class="type-and-number">
+            <div>
+              <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
+              <p class="fade-text spent"> <%= number_to_currency(category.expenses.sum(:amount)) %> Spent</p>
+            </div>
+              <% if category.expenses.length == 0%>
+                <p class="fade-text spent">No expense</p>
+                <% else%>
+                <p class="fade-text spent"><%= category.expenses.length %> <%= 'Item'.pluralize(category.expenses.count) %></p>
+              <%end%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

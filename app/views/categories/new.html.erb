@@ -1,0 +1,12 @@
+<div class='category-index'>
+  <div class='category-card'>
+    <div class='grid-80'>
+      <%= render partial: 'shared/nav' %>
+      <div class="form-div">
+        <h3>Add new category</h3>
+        <%= render "form", category: @category %>
+      </div>
+    </div>
+    <%= render partial: 'shared/grid-20' %>
+  </div>
+</div>

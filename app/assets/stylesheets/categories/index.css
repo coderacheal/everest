@@ -1,0 +1,219 @@
+.category-index, .expense-index {
+  display: flex;
+  background-color: mistyrose;
+  background-color: #ffd6c9;
+  height: 100vh;
+  align-items: center;
+}
+
+.category-index p {
+  margin: 0;
+}
+
+.category-card {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  height: 85vh;
+  width: 80vw;
+  margin: auto;
+  background-color: aliceblue;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 30px;
+}
+
+.grid-80 {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 85vh;
+}
+
+.grid-20 {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 85vh;
+}
+
+.generate-category-avatar {
+  /* display: flex; */
+  /* align-self: center; */
+  border-radius: 25%;
+  /* color: white; */
+  padding: 10px 15px;
+  font-size: 20px;
+}
+
+.add-category-div {
+  display: block;
+  text-align: right;
+  width: 60%;
+  margin: auto;
+  /* margin-bottom: 20px; */
+  margin-top: 10%;
+}
+
+.date-add-category-div:nth-child(2) {
+  padding-right: 50px;
+}
+
+.category-details, .expense-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.expense-details {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.allCategories {
+  align-items: center;
+  height: 58%;
+  width: 90%;
+  margin-top: 10%;
+  overflow-y: auto;
+}
+
+.eachCategory {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 15px 0;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.eachExpense {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.eachCategoryDetails {
+  width: 90%;
+  margin: auto;
+  
+}
+
+.delete-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+.category-name-date {
+  display: flex;
+  gap: 40px;
+}
+
+.category-date {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.limit-balance {
+  color: grey;
+}
+
+.category_delete_botton {
+  background-color: aliceblue;
+  border: 0;
+  padding: 10px;
+  border-radius: 7px;
+  color: rgb(173, 173, 173);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+
+.mini-add-option {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px dashed rgb(237, 230, 230) ;
+  padding-top: 40px;
+}
+
+.latest-categories-ribbon {
+  font-weight: bold;
+}
+
+
+.type-and-number {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: aliceblue;
+  /* background-color: rgb(227, 163, 248); */
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+.latest-categories {
+  margin-top: 30px;
+}
+
+.fade-text {
+  color: rgb(147, 145, 145);
+}
+
+.spent {
+  font-size: 14px;
+  align-self: center;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: flex-end;
+  padding: 40px 0 20px 0;
+  gap: 10px;
+}
+
+.quick-stats {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+  gap: 25px;
+}
+
+.plus-category {
+  border: 2px dashed gray;
+  padding: 3px 10px;
+  border-radius: 9px;
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(147, 145, 145)
+
+}
+

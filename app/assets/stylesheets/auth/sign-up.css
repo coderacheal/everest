@@ -1,0 +1,82 @@
+.session-body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-image: url('/assets/pxfuel.jpg');
+  height: 100vh;
+  background-color: wheat;
+  object-fit: cover;
+  align-items: center;
+
+}
+
+.session-page {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 80vw;
+  height: 80vh;
+  margin: auto auto;
+  background-color: #ffffff;
+}
+
+.session-image {
+  margin: 10% 0;
+  height: 80%;
+  width: 90%;
+}
+
+.session-form {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+  /* background-color: red */
+  
+}
+
+h2 {
+  font-weight: 100;
+  text-transform: capitalize;
+  font-size: 40px;
+}
+
+.session-form-input {
+  padding: 10px 5px;
+  outline: none;
+  border: 0;
+  background-color: #f5f5f5;
+  width: 90%;
+  margin-bottom: 18px;
+}
+
+
+.session-sign-up {
+  text-decoration: none;
+  color: white;
+  padding: 7px 10px;
+  background-color: rgb(0, 46, 214);
+  background-color: rgb(2, 196, 57);
+  border-radius: 15px;
+  border: 0;
+  font-size: 16px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.session-form-input {
+  padding: 10px 5px;
+  outline: none;
+  border: 0;
+  background-color: #f5f5f5;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+
+
+
