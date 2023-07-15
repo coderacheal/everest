@@ -5,6 +5,7 @@
         <%= render partial: 'shared/nav' %>
         <div class="form-div">
           <h3>Editing expense</h3>
+          <p class='notice' style="color: green"><%= notice %></p>
           <%= render "form", expense: @expense %>
         </div>
       </div>

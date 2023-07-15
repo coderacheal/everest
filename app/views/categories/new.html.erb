@@ -5,6 +5,7 @@
         <%= render partial: 'shared/nav' %>
         <div class="form-div">
           <h3>Add a new category</h3>
+          <p class='notice' style="color: green"><%= notice %></p>
           <%= render "form", category: @category %>
         </div>
       </div>

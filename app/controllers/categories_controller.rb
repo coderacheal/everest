@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
-  before_action :set_stat_div, only: %i[index new edit update]
+  before_action :set_stat_div, only: %i[index new edit update create]
 
 
   # GET /categories or /categories.json
@@ -25,13 +25,22 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = current_user.categories.new(category_params)
-    if @category.save
-      redirect_to categories_path(author_id: current_user.id)
+  
+    if @category.name.blank? || @category.limit.blank?
+      redirect_to new_category_path(author_id: current_user.id)
+      flash[:notice] = "Name and limit are required"
+    elsif @category.limit > 1000000
+      redirect_to new_category_path(author_id: current_user.id)
+      flash[:notice] = "Limit cannot exceed $1,000,000"
     else
-      render :new
+      if @category.save
+        redirect_to categories_path
+        flash[:notice] = "Successfully created a category 🎉!"
+      else
+        render :new
+      end
     end
   end
-
 
   def set_stat_div
     @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
@@ -44,12 +53,14 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id]) 
     @categories = Category.all
+
     if @category.expenses.sum(:amount) > params[:category][:limit].to_i
       flash[:notice] = "Your limit must be that same or equal to existing expenses for this category. Please increase limit."
       redirect_to edit_category_path(@category)
     else
       if @category.update(category_params)
         redirect_to categories_path
+        flash[:notice] = "Update successful 😊!"
       else
         render :edit
       end
@@ -62,6 +73,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     redirect_to categories_path
+    flash[:notice] = "Category deleted 👋"
   end
 
   private

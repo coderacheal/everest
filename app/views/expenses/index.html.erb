@@ -23,19 +23,23 @@
             </div>
           </div>
           <div id="categories" class="allCategories">
-            <% @expenses.each do |expense| %>
-            <div class='eachCategory'>
-              <div>
-                <%= render expense %>
+              <% if @expenses.empty?%> 
+                <p class='no-categories'>You have no expenses for <b> <%= @category.name %> </b> </p>
+              <% else %>
+              <% @expenses.each do |expense| %>
+              <div class='eachCategory'>
+                <div>
+                  <%= render expense %>
+                </div>
+                <div class='delete-edit'>
+                  <%= link_to edit_category_expense_path(category_id: @category.id, id: expense.id)do %>
+                    <%= image_tag 'editing.png', class: 'edit-pen' %>
+                  <% end %>
+                  <p class="fade-text"> <%= button_to 'X',category_expense_path(@category, expense), method: :delete, class: 'category_delete_botton' %> </p>
+                </div>
               </div>
-              <div class='delete-edit'>
-                <%= link_to edit_category_expense_path(category_id: @category.id, id: expense.id)do %>
-                  <%= image_tag 'editing.png', class: 'edit-pen' %>
-                <% end %>
-                <p class="fade-text"> <%= button_to 'X',category_expense_path(@category, expense), method: :delete, class: 'category_delete_botton' %> </p>
-              </div>
-            </div>
-            <% end %>
+              <% end %>
+            <% end%>
           </div>
       </div>
     </div>
