@@ -1,9 +1,22 @@
+.nav {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+}
+
 .nav ul{
   display: flex;
-  margin: 30px auto;
   list-style: none;
+  align-self: flex-end;
   justify-content: space-between;
-  width: 50%;
+}
+
+.home-sign {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 .nav-sign-out {

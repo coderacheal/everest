@@ -1,30 +1,38 @@
 <div class='category-index'>
   <div class='category-card'>
     <div class='grid-80'>
-      <%= render partial: 'shared/nav' %>
-        <p style="color: green"><%= notice %></p>
-        <div class="add-category-div">
-          <p class=""><%= link_to "Add New Category", new_category_path , class: 'submit-button'%></p>
-        </div>
-        <div id="categories" class="allCategories">
-            <% if @categories.empty?%>
-              <p>You have no categories yet</p>
-              <p><%= link_to "Add Category", new_category_path %></p>
-            <% else %>
-              <% @categories.each do |category| %>
-                <div class='eachCategory'>
-                  <div>
-                    <%= render category %>
+      <div class="inner-layer">
+        <%= render partial: 'shared/nav' %> 
+          <p style="color: green"><%= notice %></p>
+          <div class="add-category-div">
+            <div class='plus-to-add-category-div'>
+              <p class="plus-and-text"><%= link_to "+", new_category_path, class: 'add-category-btn'%>Add New Category</p>
+            </div>
+            <div class='date-today-div'>
+              <p class="date-today">Today <%= Time.now.strftime("%a, %d %B %Y") %></p>
+            </div>
+          </div>
+          <div id="categories" class="allCategories">
+              <% if @categories.empty?%>
+                <p class='no-categories'>You have no categories yet</p>
+              <% else %>
+                <% @categories.each do |category| %>
+                  <div class='eachCategory'>
+                    <div>
+                      <%= render category %>
+                    </div>
+                    <div class='delete-edit'>
+                      <%= link_to edit_category_path(id: category.id) do %>
+                        <%= image_tag 'editing.png', class: 'edit-pen' %>
+                      <% end %>
+                      <p class="fade-text"> <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %> </p>
+                    </div>
                   </div>
-                  <div class='delete-edit'>
-                    <%= link_to "Edit", edit_category_path(id: category.id) %>
-                    <p class="fade-text"> <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %> </p>
-                  </div>
-                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-        <br>
+          </div>
+          <br>
+      </div>
     </div>
     <%= render partial: 'shared/grid-20' %>
   </div>

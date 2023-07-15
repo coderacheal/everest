@@ -39,52 +39,111 @@
   height: 85vh;
 }
 
-.generate-category-avatar {
-  color: rgb(94, 94, 94);
-  border-radius: 25%;
-  padding: 10px 15px;
-  font-size: 20px;
+.inner-layer {
+  width: 90%;
+  height: 90%;
+  margin: auto;
 }
+
+
 
 .add-category-div {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  width: 60%;
-  margin: 50px auto;
+  width: 75%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plus-to-add-category-div{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.add-category-btn {
+  border: 2px dashed rgb(123, 123, 123);
+  padding: 0 10px;
+  border-radius: 9px;
+  font-size: 25px;
+  text-decoration: none;
+  color: rgb(123, 123, 123);
+  margin-right: 10px;
+}
+
+.plus-and-text {
+  color: rgb(110, 110, 110);
+}
+
+
+.category-button {
+  display: flex;
+  width: 20%;
+  justify-content: right;
+  text-decoration: none;
+  border: 0;
+  color: white;
+  padding: 10px 5px;
+  background-color: rgb(41, 187, 82);
+  border-radius: 55px;
+}
+
+.date-today-div {
+  display: block;
+  width: 95%;
+  margin: auto;
+  color: black;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .allCategories {
   align-items: center;
-  height: 58%;
+  height: 60%;
   width: 90%;
   margin-top: 0%;
+  margin: auto;
   overflow-y: auto;
 }
 
-.category-details, .expense-details {
-  display: flex;
-  justify-content: space-around;
-}
-
-.expense-details {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-}
-
-
 .eachCategory {
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 80% 20%;
   align-items: center;
   background-color: white;
-  width: 80%;
+  width: 90%;
   margin: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 15px 0;
+  padding: 13px 0;
   margin-bottom: 20px;
   align-items: center;
+}
+
+.no-categories {
+  text-align: center;
+  color: gray;
+}
+
+.generate-category-avatar {
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.category-details {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin: auto;
 }
 
 .eachCategoryDetails {
@@ -94,7 +153,29 @@
 
 .delete-edit {
   display: flex;
+  width: 80%;
   justify-content: space-around;
+}
+
+.edit-pen {
+  height: 15px;
+  padding: 10px;
+  background-color: rgb(206, 232, 255);
+  border-radius: 10px;
+  align-self: center;
+}
+
+.category_delete_botton {
+  background-color: aliceblue;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(173, 173, 173);
+  color: rgb(110, 110, 110);
+}
+
+.fade-text {
+  color: rgb(110, 110, 110);
 }
 
 .category-name-date {
@@ -109,15 +190,9 @@
 }
 
 .limit-balance {
+  display: flex;
   color: grey;
-}
-
-.category_delete_botton {
-  background-color: aliceblue;
-  border: 0;
-  padding: 10px;
-  border-radius: 7px;
-  color: rgb(173, 173, 173);
+  align-items: center;
 }
 
 
@@ -129,7 +204,16 @@
   border-radius: 50%;
 }
 
+.username, .small-fade {
+  font-size: 13px;
+  color: rgb(147, 145, 145);
+}
 
+.spent {
+  font-size: 13px;
+  align-self: center;
+
+}
 
 .mini-add-option {
   display: flex;
@@ -151,7 +235,7 @@
   margin: auto;
   margin-bottom: 15px;
   background-color: aliceblue;
-  /* background-color: rgb(227, 163, 248); */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 10px;
   border-radius: 5px;
 
@@ -167,14 +251,6 @@
   margin-top: 30px;
 }
 
-.fade-text {
-  color: rgb(147, 145, 145);
-}
-
-.spent {
-  font-size: 14px;
-  align-self: center;
-}
 
 .profile-name {
   display: flex;
@@ -200,8 +276,6 @@
   border-radius: 9px;
   font-size: 30px;
   text-decoration: none;
-  /* color: rgb(147, 145, 145); */
   color: rgb(237, 230, 230);
-
 }
 

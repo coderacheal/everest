@@ -1,29 +1,24 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
+  before_action :set_stat_div, only: %i[index new edit]
+
 
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories.includes(:expenses)
-
-    # @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
   
   # GET /categories/1 or /categories/1.json
-  # def show
-  # end
+  def show
+  end
 
   # GET /categories/new
   def new
     @category = Category.new
-    @categories = current_user.categories.includes(:expenses)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
   # GET /categories/1/edit
   def edit
-    @categories = current_user.categories.includes(:expenses)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
+    @category = Category.find(params[:id]) 
   end
 
   # POST /categories or /categories.json
@@ -34,6 +29,12 @@ class CategoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+
+  def set_stat_div
+    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
 
@@ -59,14 +60,6 @@ class CategoriesController < ApplicationController
     @category.destroy
     redirect_to categories_path
   end
-
-  # In your server-side code (e.g., Rails controller or helper)
-  def generate_color(category_name)
-    colors = ['aliceblue']  # Example color palette
-    # index = category_name.length % colors.length
-    # colors[index]
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
