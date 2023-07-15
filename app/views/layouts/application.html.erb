@@ -10,12 +10,9 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path('everest.png') %>
   </head>
-
   <body>
     <%= yield %>
-    <%# <p class="notice"><%= notice</p> %>
-    <%# <p class="alert"><%= alert</p>  %>
-
   </body>
 </html>
