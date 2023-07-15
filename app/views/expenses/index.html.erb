@@ -4,16 +4,22 @@
       <div class="inner-layer">
         <%= render partial: 'shared/nav' %>
           <p style="color: green"><%= notice %></p>
-          <div class="add-category-div">
-            <% if @total_amount >= @category.limit %>
-            <p>You cannot add another expense, you have reached your limit for <%= @category.name %></p> 
-            <% else %>
-              <%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get, class: 'add_expense_btn' %>
-            <% end %>
-            <div class='category-and-total-amount'>
-              <p class='total-amount'><%= category_name = @category.name %> </p> 
-              <p class='total-amount'>Total Amount: <%= number_to_currency(@total_amount) %> </p> 
-              <p class='total-amount'>Amount Remaining: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
+          <div class="add-expense-div">
+            <div class='expense-and-total-amount'>
+              <p class='category-expense-name'><%= category_name = @category.name %> </p> 
+              <div>
+                <p class='category-expense-amount'>Spent: <%= number_to_currency(@total_amount) %> </p> 
+                <p class='category-expense-amount'>Balance: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
+              </div>
+              <div>
+                <% if @total_amount >= @category.limit %>
+                  <p class='limit-reached'>You have reached your limit for <b> <%= @category.name %> </b> </p> 
+                <% else %>
+                  <p class="plus-and-text">
+                    <%= link_to "+", new_category_expense_path(user_id: current_user.id, category_id: @category.id), 
+                    class: 'add-expense-plus'%> <%= link_to "Add Expense", new_category_expense_path(user_id: current_user.id, category_id: @category.id), class: 'add-expense-btn' %></p>
+                <% end %>
+              </div>
             </div>
           </div>
           <div id="categories" class="allCategories">

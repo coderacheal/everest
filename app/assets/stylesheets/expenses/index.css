@@ -11,3 +11,74 @@
   margin-bottom: 30px;
   align-items: center;
 }
+
+
+.add-expense-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.expense-and-total-amount {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  background-color: rgb(252, 244, 234);
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.category-expense-name {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(97, 96, 96);
+}
+
+.category-expense-amount, .limit-reached {
+  text-align: left;
+  font-size: 14px;
+  color: grey;
+}
+
+.limit-reached {
+  text-align: center;
+  font-size: 13px;
+  color: grey;
+}
+
+.add-expense-plus {
+  border: 2px dashed rgb(123, 123, 123);
+  padding: 0 10px;
+  border-radius: 9px;
+  font-size: 25px;
+  text-decoration: none;
+  color: rgb(123, 123, 123);
+  margin-right: 10px;
+}
+
+.add-expense-btn {
+  /* padding: 0 10px; */
+  border-radius: 9px;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(123, 123, 123);
+}
+
+.back-button {
+  display: block;
+  justify-content: right;
+  text-decoration: none;
+  border: 0;
+  color: white;
+  padding: 10px 5px;
+  background-color: rgb(41, 187, 82);
+  border-radius: 15px;
+  font-weight: bold;
+}
