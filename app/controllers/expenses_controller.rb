@@ -37,6 +37,7 @@ class ExpensesController < ApplicationController
   def set_stat_div
     @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
     @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
+    @total_sum_categories = current_user.categories
   end
 
   # POST /expenses or /expenses.json

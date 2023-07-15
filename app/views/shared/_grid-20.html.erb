@@ -12,7 +12,7 @@
       <p class='no-categories'>You have no categories yet</p>
       <% else %>
         <p class="fade-text">You have <%= @categories.length %> <%= 'category'.pluralize(@categories.length) %></p>
-        <p class="fade-text">Total categories budget <%= number_to_currency(@categories.sum(:limit)) %></p>
+        <p class="fade-text">Total categories budget <%= number_to_currency(@total_sum_categories.sum(:limit)) %></p>
       <% end %>
     </div>
   </div>

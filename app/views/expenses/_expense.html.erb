@@ -1,2 +1,15 @@
-<div id="<%= dom_id expense %>">
+<div id="<%= dom_id expense %>"  class='category-details'>
+  <div class='category-name-date' >
+    <p class="generate-category-avatar" style="background-color: <%= generate_color(expense.name) %>"><%= expense.name[0].upcase %></p>
+    <div class='category-date'>
+      <p> <%= expense.name%></p>
+      <p class='small-fade'><%= expense.created_at.strftime('%B %d, %Y') %></p>
+    </div>
+  </div>
+  <div class='limit-balance'>
+    <div>
+      <p><%= number_to_currency(expense.amount) %></p>
+    </div>
+  </div>
 </div>
+

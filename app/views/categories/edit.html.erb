@@ -1,11 +1,13 @@
 <div class='category-index'>
   <div class='category-card'>
     <div class='grid-80'>
-      <%= render partial: 'shared/nav' %>
-      <div class="form-div">
-        <h3>Editing <%= @category.name %>  </h3>
-        <%= render "form", category: @category %>
-        <div>
+      <div class="inner-layer">
+        <%= render partial: 'shared/nav' %>
+        <div class="form-div">
+          <h3>Editing <%= @category.name %>  </h3>
+          <%= render "form", category: @category %>
+          <div>
+          </div>
         </div>
       </div>
     </div>
