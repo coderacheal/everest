@@ -8,7 +8,8 @@
       <%= form.number_field :limit, class: "form-input", placeholder: 'Limit' %>
     </div>
 
-    <div class="add-category-div">
+    <div class="submission-btn-div">
+      <%= link_to "Go Back", request.referrer || root_path, class: "submit-button"  %>
       <%= form.submit class: "submit-button" %>
     </div>
   <% end %>

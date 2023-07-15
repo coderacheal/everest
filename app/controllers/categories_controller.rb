@@ -1,54 +1,71 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
+  before_action :set_stat_div, only: %i[index new edit update create]
+
 
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
+    
   end
   
   # GET /categories/1 or /categories/1.json
-  # def show
-  # end
+  def show
+  end
 
   # GET /categories/new
   def new
     @category = Category.new
-    @categories = current_user.categories.includes(:expenses)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
   end
 
   # GET /categories/1/edit
   def edit
-    @categories = current_user.categories.includes(:expenses)
-    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
+    @category = Category.find(params[:id]) 
   end
 
   # POST /categories or /categories.json
   def create
     @category = current_user.categories.new(category_params)
-    if @category.save
-      redirect_to categories_path(author_id: current_user.id)
+  
+    if @category.name.blank? || @category.limit.blank?
+      redirect_to new_category_path(author_id: current_user.id)
+      flash[:notice] = "Name and limit are required"
+    elsif @category.limit > 1000000
+      redirect_to new_category_path(author_id: current_user.id)
+      flash[:notice] = "Limit cannot exceed $1,000,000"
     else
-      render :new
+      if @category.save
+        redirect_to categories_path
+        flash[:notice] = "Successfully created a category 🎉!"
+      else
+        render :new
+      end
     end
+  end
+
+  def set_stat_div
+    @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
+    @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
+    @total_sum_categories = current_user.categories
   end
 
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
     @category = Category.find(params[:id]) 
-  
+    @categories = Category.all
+
     if @category.expenses.sum(:amount) > params[:category][:limit].to_i
-      flash.now[:notice] = "Category limit exceeded. Please adjust expenses."
-      render :edit
+      flash[:notice] = "Your limit must be that same or equal to existing expenses for this category. Please increase limit."
+      redirect_to edit_category_path(@category)
     else
       if @category.update(category_params)
         redirect_to categories_path
+        flash[:notice] = "Update successful 😊!"
       else
         render :edit
       end
     end
+
   end
 
   # DELETE /categories/1 or /categories/1.json
@@ -56,15 +73,8 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     redirect_to categories_path
+    flash[:notice] = "Category deleted 👋"
   end
-
-  # In your server-side code (e.g., Rails controller or helper)
-  def generate_color(category_name)
-    colors = ['aliceblue']  # Example color palette
-    # index = category_name.length % colors.length
-    # colors[index]
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -7,7 +7,6 @@
   background-color: wheat;
   object-fit: cover;
   align-items: center;
-
 }
 
 .session-page {
@@ -34,8 +33,6 @@
   align-content: center;
   align-items: center;
   margin: auto;
-  /* background-color: red */
-  
 }
 
 h2 {
