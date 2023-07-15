@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
-  before_action :set_stat_div, only: %i[index new edit]
+  before_action :set_stat_div, only: %i[index new edit update]
 
 
   # GET /categories or /categories.json
@@ -43,10 +43,10 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
     @category = Category.find(params[:id]) 
-  
+    @categories = Category.all
     if @category.expenses.sum(:amount) > params[:category][:limit].to_i
-      flash.now[:notice] = "Category limit exceeded. Please adjust expenses."
-      render :edit
+      flash[:notice] = "Your limit must be that same or equal to existing expenses for this category. Please increase limit."
+      redirect_to edit_category_path(@category)
     else
       if @category.update(category_params)
         redirect_to categories_path
@@ -54,6 +54,7 @@ class CategoriesController < ApplicationController
         render :edit
       end
     end
+
   end
 
   # DELETE /categories/1 or /categories/1.json

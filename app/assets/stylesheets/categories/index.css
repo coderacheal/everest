@@ -21,6 +21,10 @@
   border-radius: 30px;
 }
 
+/* .notice {
+  text-align: center;
+} */
+
 .grid-80 {
   display: flex;
   flex-direction: column;

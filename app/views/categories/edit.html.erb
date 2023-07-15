@@ -3,8 +3,10 @@
     <div class='grid-80'>
       <div class="inner-layer">
         <%= render partial: 'shared/nav' %>
+        
         <div class="form-div">
             <h3>Editing <%= @category.name %>  </h3>
+            <p class='notice' style="color: green"><%= notice %></p>
             <%= render "form", category: @category %>
           <div>
           </div>
