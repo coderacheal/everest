@@ -1,4 +1,5 @@
-.category-index, .expense-index {
+.category-index,
+.expense-index {
   display: flex;
   background-color: mistyrose;
   background-color: #ffd6c9;
@@ -17,7 +18,7 @@
   width: 80vw;
   margin: auto;
   background-color: aliceblue;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 30px;
 }
 
@@ -49,8 +50,6 @@
   margin: auto;
 }
 
-
-
 .add-category-div {
   display: flex;
   flex-direction: column;
@@ -62,7 +61,7 @@
   margin-right: auto;
 }
 
-.plus-to-add-category-div{
+.plus-to-add-category-div {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
@@ -83,7 +82,6 @@
 .plus-and-text {
   color: rgb(110, 110, 110);
 }
-
 
 .category-button {
   display: flex;
@@ -123,7 +121,7 @@
   width: 90%;
   margin: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 13px 0;
   margin-bottom: 20px;
   align-items: center;
@@ -140,7 +138,7 @@
   padding: 10px 15px;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .category-details {
@@ -208,7 +206,8 @@
   border-radius: 50%;
 }
 
-.username, .small-fade {
+.username,
+.small-fade {
   font-size: 13px;
   color: rgb(147, 145, 145);
 }
@@ -216,21 +215,19 @@
 .spent {
   font-size: 13px;
   align-self: center;
-
 }
 
 .mini-add-option {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid rgb(237, 230, 230) ;
+  border-top: 1px solid rgb(237, 230, 230);
   padding-top: 40px;
 }
 
 .latest-categories-ribbon {
   font-weight: bold;
 }
-
 
 .type-and-number {
   display: grid;
@@ -239,22 +236,19 @@
   margin: auto;
   margin-bottom: 15px;
   background-color: aliceblue;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 5px;
-
 }
 
 .category_name {
   color: rgb(95, 93, 93);
   text-decoration: none;
-
 }
 
 .latest-categories {
   margin-top: 30px;
 }
-
 
 .profile-name {
   display: flex;
@@ -275,11 +269,10 @@
 }
 
 .plus-category {
-  border: 2px dashed rgb(237, 230, 230);;
+  border: 2px dashed rgb(237, 230, 230);
   padding: 0 10px;
   border-radius: 9px;
   font-size: 30px;
   text-decoration: none;
   color: rgb(237, 230, 230);
 }
-

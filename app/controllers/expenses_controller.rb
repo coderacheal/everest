@@ -11,14 +11,11 @@ class ExpensesController < ApplicationController
     @category = Category.find(params[:category_id])
   end
 
-
-
   # GET /expenses/1 or /expenses/1.json
   def show
     @category = Category.find(params[:category_id])
     @expense = @category.expenses.find(params[:id])
   end
-  
 
   # GET /expenses/new
   def new
@@ -28,13 +25,11 @@ class ExpensesController < ApplicationController
     # @categories = Category.all
   end
 
-
   # GET /expenses/1/edit
   def edit
     @category = Category.find(params[:category_id])
     @expense = Expense.find(params[:id])
   end
-
 
   def set_stat_div
     @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
@@ -42,52 +37,43 @@ class ExpensesController < ApplicationController
     @total_sum_categories = current_user.categories
     # @categories = Category.all
   end
-  
 
   # POST /expenses or /expenses.json
   def create
     @expense = @category.expenses.build(expense_params)
     @category_expenses = @category.expenses.to_a
     total_expenses_amount = @category_expenses.sum(&:amount)
-   
 
     if total_expenses_amount > @category.limit
       render :new
-    else
-      if @expense.save
-        @category.expenses << @expense
-        redirect_to category_expenses_path, notice: "Successfully added a new expense!"
-      else
-        render :new
-      end
+    elsif @expense.save
+      @category.expenses << @expense
+      redirect_to category_expenses_path, notice: 'Successfully added a new expense!'
     end
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
     @expense = Expense.find(params[:id])
-    @category = Category.find(params[:category_id]) 
-  
-    if @category
-      @category_expenses = @category.expenses.to_a
-      total_expenses_amount = @category_expenses.sum(&:amount) - (@expense.amount.to_i || 0)
-  
-      if total_expenses_amount + params[:expense][:amount].to_i <= @category.limit
-        if @expense.update(expense_params)
-          redirect_to category_expenses_path, notice: "Expense updated successfully."
-        else
-          flash.now[:alert] = "Failed to update expense."
-          render :edit
-        end
+    @category = Category.find(params[:category_id])
+
+    return unless @category
+
+    @category_expenses = @category.expenses.to_a
+    total_expenses_amount = @category_expenses.sum(&:amount) - (@expense.amount.to_i || 0)
+
+    if total_expenses_amount + params[:expense][:amount].to_i <= @category.limit
+      if @expense.update(expense_params)
+        redirect_to category_expenses_path, notice: 'Expense updated successfully.'
       else
-        redirect_to edit_category_expense_path(@expense), notice: "Updating this expense would exceed the category limit."
+        flash.now[:alert] = 'Failed to update expense.'
+        render :edit
       end
     else
-      flash.now[:alert] = "Category not found."
-      render :edit
+      redirect_to edit_category_expense_path(@expense),
+                  notice: 'Updating this expense would exceed the category limit.'
     end
   end
-  
 
   # DELETE /expenses/1 or /expenses/1.json
   def destroy

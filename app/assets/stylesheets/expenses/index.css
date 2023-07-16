@@ -6,12 +6,11 @@
   width: 80%;
   margin: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 15px 0;
   margin-bottom: 30px;
   align-items: center;
 }
-
 
 .add-expense-div {
   display: flex;
@@ -23,6 +22,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .expense-and-total-amount {
   display: grid;
   grid-template-columns: 30% 40% 30%;
@@ -31,7 +31,7 @@
   border-radius: 10px;
   text-align: center;
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .category-expense-name {
@@ -41,7 +41,8 @@
   color: rgb(97, 96, 96);
 }
 
-.category-expense-amount, .limit-reached {
+.category-expense-amount,
+.limit-reached {
   text-align: left;
   font-size: 14px;
   color: grey;

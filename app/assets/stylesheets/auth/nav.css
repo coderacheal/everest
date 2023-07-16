@@ -6,7 +6,7 @@
   margin: auto;
 }
 
-.nav ul{
+.nav ul {
   display: flex;
   list-style: none;
   align-self: flex-end;
@@ -28,13 +28,12 @@
   border-radius: 15px;
 }
 
-
 .add-new-category {
   text-decoration: none;
   border: 0;
   color: white;
   padding: 5px 10px;
-  background-color: rgb(41, 187, 82, .7);
+  background-color: rgb(41, 187, 82, 0.7);
   border-radius: 10px;
 }
 

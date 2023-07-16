@@ -8,7 +8,6 @@
   margin-top: 10vh;
 }
 
-
 .login_signup {
   text-align: center;
   height: 72vh;
@@ -25,7 +24,6 @@
   margin: auto;
   margin-top: 15vh;
   text-align: center;
-
 }
 
 .login-wrapper h1 {
@@ -54,7 +52,7 @@
   font-weight: 100;
 }
 
-.links-signup-div{
+.links-signup-div {
   display: flex;
   width: 80%;
   justify-content: center;
@@ -62,7 +60,6 @@
   margin: auto;
   text-align: center;
   margin-top: 8vh;
-
 }
 
 .session_text_login,
