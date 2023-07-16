@@ -27,14 +27,14 @@
       <div class="latest-categories">
         <% @latest.each do |category| %>
           <div class="type-and-number">
-            <div>
+            <div class="name-and-amt-spent">
               <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name' %>
               <p class="small-fade spent"> <%= number_to_currency(category.expenses.sum(:amount)) %> spent</p>
             </div>
               <% if category.expenses.length == 0%>
-                <p class="small-fade spent">No expense</p>
+                <p class="small-fade spent items">No expense</p>
                 <% else%> 
-                <p class="small-fade spent"><%= category.expenses.length %> <%= 'Item'.pluralize(category.expenses.count) %></p>
+                <p class="small-fade spent items"><%= category.expenses.length %> <%= 'Item'.pluralize(category.expenses.count) %></p>
               <%end%>
           </div>
         <% end %>
