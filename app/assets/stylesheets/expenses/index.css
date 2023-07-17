@@ -83,3 +83,40 @@
   border-radius: 15px;
   font-weight: bold;
 }
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .expense-and-total-amount {
+    padding: 15px 20px;
+    grid-template-columns: 30% 50% 20%;
+    gap: 3%;
+  }
+
+  .add-expense-div {
+    width: 100%;
+  }
+
+  .category-expense-name {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .category-expense-amount,
+  .limit-reached {
+    text-align: left;
+    font-size: 13px;
+    color: grey;
+  }
+
+  .add-expense-btn {
+    display: none;
+  }
+
+  .no-categories {
+    width: 90%;
+    margin: auto;
+  }
+
+  .limit-reached {
+    text-align: center;
+  }
+}

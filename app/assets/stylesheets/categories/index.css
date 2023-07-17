@@ -61,6 +61,7 @@
   margin-right: auto;
 }
 
+
 .plus-to-add-category-div {
   display: flex;
   justify-content: flex-end;
@@ -388,27 +389,14 @@
     padding: 10px;
   }
 
-  /* .created {
-    display: none;
-  } */
-
   .limit-balance {
     display: none;
-    /* display: flex;
-    justify-content: center;
-    width: 70%; */
-    /* text-align: center; */
-    /* margin: auto; */
-    /* background-color: red; */
   }
 
   .cat-name-link {
     font-size: 17px;
     margin-top: 7px;
     font-weight: bold;
-    /* align-self: center; */
-    /* background-color: yellow; */
-    /* vertical-align: middle; */
   }
   
   .category_delete_botton {
@@ -419,8 +407,6 @@
     color: rgb(173, 173, 173);
     color: rgb(110, 110, 110);
   }
-  
-  
 
   .generate-category-avatar {
     padding: 7px 10px;
@@ -432,6 +418,13 @@
     align-items: center;
     text-align: center;
   }
+
+  .notice {
+    font-size: 11px;
+    position: absolute;
+    bottom: 72vh;
+  }
+  
 }
   
 

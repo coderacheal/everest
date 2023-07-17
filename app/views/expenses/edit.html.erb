@@ -4,8 +4,8 @@
       <div class="inner-layer">
         <%= render partial: 'shared/nav' %>
         <div class="form-div">
-          <h3>Editing expense</h3>
-          <p class='notice' style="color: green"><%= notice %></p>
+          <h3>Editing <%= @expense.name %> </h3>
+          <p class='notice' style="color: red"><%= notice %></p>
           <%= render "form", expense: @expense %>
         </div>
       </div>

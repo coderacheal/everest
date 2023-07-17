@@ -22,7 +22,6 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
     @category_expenses = @category.expenses.to_a
     @total_amount = @category_expenses.sum(&:amount)
-    # @categories = Category.all
   end
 
   # GET /expenses/1/edit
@@ -35,7 +34,6 @@ class ExpensesController < ApplicationController
     @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
     @latest = current_user.categories.includes(:expenses).order(created_at: :desc).limit(3)
     @total_sum_categories = current_user.categories
-    # @categories = Category.all
   end
 
   # POST /expenses or /expenses.json
@@ -45,10 +43,10 @@ class ExpensesController < ApplicationController
     total_expenses_amount = @category_expenses.sum(&:amount)
 
     if total_expenses_amount > @category.limit
-      render :new
+      redirect_to new_category_expense_path, notice: 'Ops! Your expense amount is greater than your limit amount'
     elsif @expense.save
       @category.expenses << @expense
-      redirect_to category_expenses_path, notice: 'Successfully added a new expense!'
+      redirect_to category_expenses_path, notice: 'Successfully created a expense 🎉!'
     end
   end
 
@@ -64,14 +62,14 @@ class ExpensesController < ApplicationController
 
     if total_expenses_amount + params[:expense][:amount].to_i <= @category.limit
       if @expense.update(expense_params)
-        redirect_to category_expenses_path, notice: 'Expense updated successfully.'
+        redirect_to category_expenses_path, notice: 'Expense updated successfully 😊!'
       else
         flash.now[:alert] = 'Failed to update expense.'
         render :edit
       end
     else
       redirect_to edit_category_expense_path(@expense),
-                  notice: 'Updating this expense would exceed the category limit.'
+      notice: 'Updating this expense would exceed the category limit.'
     end
   end
 
