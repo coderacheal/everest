@@ -1,0 +1,211 @@
+@media (min-width: 320px) and (max-width: 500px) {
+
+  /* CATEGORIES INDEX */
+
+    .grid-20 {
+        display: none;
+    }
+
+    .category-card {
+        display: grid;
+        grid-template-columns: 100%;
+        height: 100vh;
+        width: 100vw;
+        margin: auto;
+        background-color: aliceblue;
+        border-radius: 0;
+      }
+
+    .mobile-header {
+      display: flex;
+    }
+
+    .desktop-header {
+        display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    .everest-logo {
+      height: 40px;
+      margin-top: 20px;
+    }
+
+    .profile-name-mobile {
+      /* background-color: yellow; */
+      /* display: flex; */
+    }
+
+    .mobile-ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      /* background-color: white; */
+      width: 50%;
+      padding: 0;
+    }
+
+    .nav-sign-out {
+      margin-top: 15px;
+    }
+
+    .inner-layer {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+    }
+
+    .allCategories {
+      width: 90%;
+      margin: auto;
+      height: 58vh;
+    }
+  
+    .eachCategory {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      align-items: center;
+      background-color: white;
+      width: 95%;
+      padding: 10px 0;
+    }
+  
+    .add-category-btn {
+      padding: 5px 10px;
+      border-radius: 9px;
+      font-size: 15px;
+      text-decoration: none;
+      color: rgb(123, 123, 123);
+      margin-right: 10px;
+    }
+  
+    .plus-and-text {
+      font-size: 15px;
+    }
+  
+    .date-today-div {
+      width: 95%;
+      font-size: 14px;
+      margin-top: 10px;
+      /* font-weight: lighter; */
+      margin-top: 50px;
+
+      /* text-align: right; */
+
+    }
+  
+    .category-details {
+      width: 90%;
+      display: grid;
+      grid-template-columns: 100%;
+      margin: auto;
+      float: right;
+    }
+  
+    .category-name-date {
+      display: flex;
+      gap: 0px;
+    }
+  
+    .delete-edit {
+      /* flex-direction: column; */
+      display: flex;
+      width: 90%;
+      align-items: center;
+    }
+    
+    .edit-pen {
+      height: 10px;
+      padding: 7px;
+    }
+  
+    .limit-balance {
+      display: none;
+    }
+  
+    .cat-name-link {
+      font-size: 17px;
+      margin-top: 7px;
+      font-weight: bold;
+    }
+    
+    .category_delete_botton {
+      background-color: aliceblue;
+      border: 0;
+      padding: 7px;
+      border-radius: 10px;
+      color: rgb(173, 173, 173);
+      color: rgb(110, 110, 110);
+    }
+  
+    .generate-category-avatar {
+      padding: 7px 10px;
+      font-size: 15px;
+      font-weight: bold;
+      height: 40%;
+      margin: auto;
+      align-self: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .notice {
+      font-size: 11px;
+      position: absolute;
+      bottom: 82vh;
+    }
+
+    .created {
+      font-size: 11px;
+    }
+
+    .categories-link-page {
+      padding: 5px 0;
+    }
+
+
+  /* EXPENSES INDEX */
+
+  .expense-and-total-amount {
+    width: 80%;
+    margin: auto;
+    padding: 15px 20px;
+    grid-template-columns: 30% 50% 20%;
+    gap: 3%;
+  }
+
+  .add-expense-div {
+    width: 100%;
+  }
+
+  .category-expense-name {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .category-expense-amount,
+  .limit-reached {
+    text-align: left;
+    font-size: 13px;
+    color: grey;
+  }
+
+  .add-expense-btn {
+    display: none;
+  }
+
+  .no-categories {
+    width: 90%;
+    margin: auto;
+  }
+
+  .limit-reached {
+    text-align: center;
+  }
+
+    
+}

@@ -13,21 +13,21 @@
             </div>
           </div>
           <div id="categories" class="allCategories">
-              <% if @categories.empty?%>
-                <p class='no-categories'>You have no categories yet</p>
-              <% else %>
-                <% @categories.each do |category| %>
-                  <div class='eachCategory'>
-                    <div>
-                      <%= render category %>
-                    </div>
-                    <div class='delete-edit'>
-                      <%= link_to edit_category_path(id: category.id) do %>
-                        <%= image_tag 'editing.png', class: 'edit-pen' %>
-                      <% end %>
-                      <p class="fade-text"> <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %> </p>
-                    </div>
+            <% if @categories.empty?%>
+              <p class='no-categories'>You have no categories yet</p>
+            <% else %>
+              <% @categories.each do |category| %>
+                <div class='eachCategory'>
+                  <div>
+                    <%= render category %>
                   </div>
+                  <div class='delete-edit'>
+                    <%= link_to edit_category_path(id: category.id) do %>
+                      <%= image_tag 'editing.png', class: 'edit-pen' %>
+                    <% end %>
+                    <p class="fade-text"> <%= button_to 'X', category_path(category), method: :delete, class: 'category_delete_botton' %> </p>
+                  </div>
+                </div>
               <% end %>
             <% end %>
           </div>
