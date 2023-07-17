@@ -69,7 +69,7 @@ class ExpensesController < ApplicationController
       end
     else
       redirect_to edit_category_expense_path(@expense),
-      notice: 'Updating this expense would exceed the category limit.'
+                  notice: 'Updating this expense would exceed the category limit.'
     end
   end
 

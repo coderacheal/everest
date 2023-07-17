@@ -42,6 +42,10 @@
   border-radius: 10px;
 }
 
+#huntr-react-container-2 {
+  display: none;
+}
+
 
 /* Mouse Handle */
 ::-webkit-scrollbar-thumb {
@@ -54,7 +58,6 @@
   background: linear-gradient(rgb(255, 137, 255), #ffb6c1); /* Mint Green to Pink Rose */
 }
 
-
 @media (min-width: 1024px) {
   .nav {
     grid-template-columns: 50% 50%;
@@ -63,12 +66,12 @@
   .quick-stats {
     width: 100%;
   }
-
 }
 
 @media (min-width: 500px) and (max-width: 768px) {
   .nav ul {
     flex-direction: column;
+
     /* background-color: red; */
     gap: 5px;
     align-items: flex-end;
@@ -82,5 +85,4 @@
   .home-sign {
     font-size: 15px;
   }
-  
 }

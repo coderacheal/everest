@@ -46,8 +46,8 @@ h2 {
   outline: none;
   border: 0;
   background-color: #f5f5f5;
-  width: 90%;
-  margin-bottom: 18px;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .session-sign-up {
@@ -62,13 +62,4 @@ h2 {
   margin-right: 30px;
   margin-bottom: 30px;
   margin-top: 20px;
-}
-
-.session-form-input {
-  padding: 10px 5px;
-  outline: none;
-  border: 0;
-  background-color: #f5f5f5;
-  width: 100%;
-  margin-bottom: 24px;
 }

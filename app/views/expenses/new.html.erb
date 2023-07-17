@@ -5,8 +5,7 @@
         <%= render partial: 'shared/nav' %>
         <div class="form-div">
           <%= form_with(model: @expense, url: category_expenses_path(user_id: current_user.id, category_id: @category.id), local: true, remote: true) do |form| %>
-            <h3 class='new-expense-ribbon'>Add Expense</h3>
-            <p class='notice' style="color: red"><%= notice %></p>
+            <h3 class='new-expense-ribbon'>Add expense for <b> <%= @category.name %> </b> </h3>
             <div class='expense-inputs'>
               <div>
                 <%= form.text_field :name, class: 'field expense-field', placeholder: 'Expense name', class: "form-input" %>

@@ -1,7 +1,6 @@
 .eachExpense {
   display: grid;
   grid-template-columns: 85% 15%;
-  align-items: center;
   background-color: white;
   width: 80%;
   margin: auto;
