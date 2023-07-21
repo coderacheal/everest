@@ -4,6 +4,9 @@
   <h1><b>Everest</b></h1>
 </div>
 
+![image](https://github.com/coderacheal/everest/assets/97846040/bb175304-21d5-433d-97be-c41df7748b20)
+
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -57,6 +60,8 @@
 - **Add multiple categories**
 - **Add multiple expenses for each category**
 - **View quick stats on your bugeting and spending**
+
+![image](https://github.com/coderacheal/everest/assets/97846040/af9262ac-9598-4c33-9554-e854f3ef0b09)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
