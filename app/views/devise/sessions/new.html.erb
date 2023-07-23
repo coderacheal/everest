@@ -23,12 +23,10 @@
         <% end %>
 
         <div class="actions">
-          <%= f.submit "Log in", class: 'session-sign-up' %>
+          <%= f.submit "Log in", class: 'submit-button auth-btn' %>
         </div>
+        <p class='no-account'>Don't have an account already? <%= link_to "Sign up", new_registration_path(resource_name), class: 'sign-up-from-login' %></p>
 
-        <%= render "devise/shared/links" %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        
       <% end %>
     </div>
   </div>

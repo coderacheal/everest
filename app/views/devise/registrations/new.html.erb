@@ -25,15 +25,23 @@
         </div>
 
         <div class="field">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'session-form-input', placeholder: 'Re-enter Password' %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'session-form-input', placeholder: 'Confirm Password' %>
         </div>
 
-        <div class="actions">
-          <%= f.submit "Sign up", class: 'session-sign-up' %>
+        <div class="auth-btn-div">
+          <%= f.submit "Sign up", class: 'submit-button' %>
           <%= render "devise/shared/links", class: 'session-sign-up' %>
         </div>
 
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <% if resource.errors.any? %>
+          <div class="error-messages">
+            <ul>
+              <% resource.errors.full_messages.each do |message| %>
+                <li style="color: red"><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
       
     </div>

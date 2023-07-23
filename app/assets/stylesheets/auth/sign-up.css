@@ -63,3 +63,26 @@ h2 {
   margin-bottom: 30px;
   margin-top: 20px;
 }
+
+.no-account {
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.sign-up-from-login {
+  font-size: 17px;
+  text-decoration: none;
+  color: rgb(6, 224, 6);
+  font-weight: bold;
+}
+
+.auth-btn {
+  margin-top: 15px;
+}
+
+.auth-btn-div {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
