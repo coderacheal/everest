@@ -73,6 +73,11 @@
   text-decoration: none;
   color: rgb(123, 123, 123);
   margin-right: 10px;
+  transition: 1s;
+}
+
+.add-category-btn:hover {
+  border: 2px solid rgb(123, 123, 123);
 }
 
 .plus-and-text {
@@ -122,6 +127,10 @@
   margin-bottom: 20px;
 }
 
+.eachCategory:hover {
+  background-color: mistyrose;
+}
+
 .no-categories {
   text-align: center;
   color: gray;
@@ -143,6 +152,16 @@
   margin: auto;
 }
 
+.category_name {
+  color: rgb(95, 93, 93);
+  text-decoration: none;
+}
+
+.category_name:hover {
+  text-decoration: underline;
+  transition: 1s;
+}
+
 .eachCategoryDetails {
   width: 90%;
   margin: auto;
@@ -162,6 +181,10 @@
   align-self: center;
 }
 
+.edit-pen:hover {
+  opacity: 0.7;
+}
+
 .category_delete_botton {
   background-color: aliceblue;
   border: 0;
@@ -169,6 +192,10 @@
   border-radius: 10px;
   color: rgb(173, 173, 173);
   color: rgb(110, 110, 110);
+}
+
+.category_delete_botton:hover {
+  opacity: 0.7;
 }
 
 .fade-text {
@@ -236,9 +263,8 @@
   border-radius: 5px;
 }
 
-.category_name {
-  color: rgb(95, 93, 93);
-  text-decoration: none;
+.type-and-number:hover {
+  background-color: rgb(214, 246, 214);
 }
 
 .latest-categories {
@@ -270,6 +296,12 @@
   font-size: 30px;
   text-decoration: none;
   color: rgb(237, 230, 230);
+  transition: 2s;
+}
+
+.plus-category:hover {
+  border: 2px solid rgb(123, 123, 123);
+  color: rgb(123, 123, 123);
 }
 
 @media (min-width: 1024px) {
