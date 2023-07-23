@@ -90,3 +90,48 @@
   margin: auto;
   text-align: center;
 }
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .login_signup {
+    width: 90vw;
+  }
+
+  .login-wrapper {
+    width: 90%;
+    margin: auto;
+  }
+
+  .login-wrapper ul li {
+    font-size: 13px;
+    font-weight: bold;    
+  }
+
+  .login-wrapper ul {
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    line-height: 30px;
+  }
+
+  .instruction-icon {
+    margin-right: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+
+  .login-wrapper ul li {
+    font-size: 17px;
+    font-weight: bold;    
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login-wrapper ul li {
+    font-size: 24px;
+    font-weight: lighter;
+  }
+
+}
