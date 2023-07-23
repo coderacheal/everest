@@ -8,9 +8,13 @@
 
 .nav-main {
   padding: 10px;
-  /* background-color: red; */
   background-color: pink;
   border-radius: 50%;
+  transition: 1s;
+}
+
+.nav-main:hover {
+  background-color: aliceblue;
 }
 
 .mobile-header {
@@ -28,6 +32,13 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+  transition: 1s;
+}
+
+.home-sign:hover {
+  color: rgb(2, 170, 2);
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .nav-sign-out {

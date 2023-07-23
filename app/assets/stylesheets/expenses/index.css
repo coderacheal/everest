@@ -1,9 +1,9 @@
 .allCategoryExpenses {
   margin: auto;
   align-items: center;
-  height: 55%;
+  height: 45%;
   width: 90%;
-  margin-top: 0%;
+  margin-top: 4%;
   overflow-y: auto;
 }
 
@@ -70,6 +70,11 @@
   text-decoration: none;
   color: rgb(123, 123, 123);
   margin-right: 10px;
+  transition: 1s;
+}
+
+.add-expense-plus:hover {
+  border: 2px solid rgb(123, 123, 123);
 }
 
 .add-expense-btn {
