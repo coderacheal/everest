@@ -15,8 +15,8 @@
                 <%= form.number_field :amount, class: 'field expense-field', placeholder: 'Amount ($)', class: "form-input" %> <br>
               </div>
               <div class="submission-btn-div">
-                <%= link_to "Go Back", request.referrer || root_path, class: 'submit-button' %>
                 <%= form.submit class: "submit-button" %>
+                <%= link_to "Go Back", request.referrer || root_path, class: 'submit-button' %>
               </div>
             </div>
           <% end %>

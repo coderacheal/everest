@@ -9,15 +9,19 @@
 
 .eachExpense {
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 80% 20%;
+  align-items: center;
   background-color: white;
-  width: 80%;
+  width: 90%;
   margin: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 15px 0;
-  margin-bottom: 30px;
-  align-items: center;
+  padding: 13px 0;
+  margin-bottom: 20px;
+}
+
+.eachExpense:hover {
+  background-color: mistyrose;
 }
 
 .add-expense-div {
@@ -78,7 +82,6 @@
 }
 
 .add-expense-btn {
-  /* padding: 0 10px; */
   border-radius: 9px;
   font-size: 16px;
   text-decoration: none;
@@ -95,6 +98,10 @@
   background-color: rgb(41, 187, 82);
   border-radius: 15px;
   font-weight: bold;
+}
+
+.expenses-to-categories {
+  display: none;
 }
 
 @media (min-width: 500px) and (max-width: 768px) {

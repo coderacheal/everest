@@ -1,6 +1,6 @@
 <div id="<%= dom_id category %>"  class='category-details'>
   <div class='category-name-date' >
-    <p class="generate-category-avatar" style="background-color: <%= generate_color(category.name) %>"><%= category.name[0].upcase %></p>
+    <p class="generate-category-avatar align-avatar" style="background-color: <%= generate_color(category.name) %>"><%= category.name[0].upcase %></p>
     <div class='category-date'>
       <%= link_to category.name, category_expenses_path(category_id: category.id), class: 'category_name cat-name-link' %>
       <p class='small-fade created'>Created <%= category.created_at.strftime('%B %e, %Y') %></p>
@@ -8,11 +8,11 @@
   </div>
   <div class='limit-balance'>
     <div>
-      <p class="small-fade">
+      <p class="small-fade category-limit">
         Limit: <%= number_to_currency(category.limit)%>
       </p>
       <% total_amount = category.expenses.sum(:amount) %>
-      <p class="small-fade">
+      <p class="small-fade bal">
         <% if category.limit.present? %>
           Bal: <%= number_to_currency(category.limit - total_amount) %>
         <% else %>

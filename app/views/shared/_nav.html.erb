@@ -13,7 +13,7 @@
 <header class='mobile-header'>
   <nav class="mobile-nav">
     <%= link_to categories_path, class: 'back-sign'  do%>
-      <%= image_tag 'everest', class: 'everest-logo' %>
+      <%= image_tag 'logo', class: 'everest-logo nav-main' %>
     <% end %>
     <ul class='mobile-ul'>
       <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %></li>
