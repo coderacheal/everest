@@ -91,7 +91,6 @@
   text-align: center;
 }
 
-
 @media (min-width: 320px) and (max-width: 1024px) {
   .login_signup {
     width: 90vw;
@@ -104,7 +103,7 @@
 
   .login-wrapper ul li {
     font-size: 13px;
-    font-weight: bold;    
+    font-weight: bold;
   }
 
   .login-wrapper ul {
@@ -121,10 +120,9 @@
 }
 
 @media (min-width: 500px) and (max-width: 768px) {
-
   .login-wrapper ul li {
     font-size: 17px;
-    font-weight: bold;    
+    font-weight: bold;
   }
 }
 
@@ -133,5 +131,4 @@
     font-size: 24px;
     font-weight: lighter;
   }
-
 }
