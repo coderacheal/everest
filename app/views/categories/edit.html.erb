@@ -4,6 +4,7 @@
       <div class="inner-layer">
         <%= render partial: 'shared/nav' %>
         <div class="form-div">
+          <%= flash[:notice] %>
           <h3 class="form-ribbon">Editing <%= @category.name %>  </h3>
           <%= render "form", category: @category %>
         </div>

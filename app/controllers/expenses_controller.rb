@@ -37,16 +37,28 @@ class ExpensesController < ApplicationController
   end
 
   # POST /expenses or /expenses.json
+
   def create
     @expense = @category.expenses.build(expense_params)
-    @category_expenses = @category.expenses.to_a
-    total_expenses_amount = @category_expenses.sum(&:amount)
 
-    if total_expenses_amount > @category.limit
-      redirect_to new_category_expense_path, notice: 'Ops! Your expense amount is greater than your limit amount'
-    elsif @expense.save
+    if @expense.amount.present? && BigDecimal(@expense.amount) > 0
+      @category_expenses = @category.expenses.to_a
+      total_expenses_amount = @category_expenses.sum { |expense| BigDecimal(expense.amount) }
+
+      if total_expenses_amount > @category.limit
+        redirect_to new_category_expense_path, notice: 'Ops! Your expense amount is greater than your limit amount'
+        return
+      end
+    else
+      redirect_to new_category_expense_path, notice: 'Please enter a valid expense amount'
+      return
+    end
+
+    if @expense.save
       @category.expenses << @expense
-      redirect_to category_expenses_path, notice: 'Successfully created a expense 🎉!'
+      redirect_to category_expenses_path(@category), notice: 'Successfully created a expense 🎉!'
+    else
+      render :new
     end
   end
 
