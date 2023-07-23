@@ -1,5 +1,25 @@
 .splash {
+  height: 100vh;
   display: flex;
+  background-image: url(/assets/bubbles.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.app-n-logo {
+  padding-top: 40px;
+}
+
+.logo-main {
+  padding: 20px;
+  background-color: red;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.instruction-icon {
+  margin-right: 20px;
 }
 
 .image {
@@ -11,18 +31,19 @@
 .login_signup {
   text-align: center;
   height: 72vh;
-  width: 35vw;
+  width: 50vw;
   margin: auto;
   margin-top: 15vh;
   background-color: #f5f5f5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .login-wrapper {
-  width: 80%;
+  width: 60%;
   justify-content: center;
   gap: 30px;
   margin: auto;
-  margin-top: 15vh;
   text-align: center;
 }
 
@@ -42,14 +63,23 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  padding: 0;
   padding-left: 70px;
   font-size: 18px;
   text-align: left;
   font-weight: 100;
+  line-height: 40px;
+  align-content: center;
+  justify-content: center;
 }
 
 .login-wrapper ul li {
   font-weight: 100;
+  vertical-align: middle;
+}
+
+.login-wrapper ul li div {
+  display: flex;
 }
 
 .links-signup-div {
@@ -59,16 +89,5 @@
   gap: 30px;
   margin: auto;
   text-align: center;
-  margin-top: 8vh;
 }
 
-.session_text_login,
-.session_text_signup {
-  text-decoration: none;
-  color: white;
-  padding: 10px 30px;
-  font-size: 20px;
-  background-color: rgb(0, 46, 214);
-  background-color: rgb(2, 196, 57);
-  border-radius: 15px;
-}
