@@ -41,7 +41,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = @category.expenses.build(expense_params)
 
-    if @expense.amount.present? && BigDecimal(@expense.amount) > 0
+    if @expense.amount.present? && BigDecimal(@expense.amount).positive?
       @category_expenses = @category.expenses.to_a
       total_expenses_amount = @category_expenses.sum { |expense| BigDecimal(expense.amount) }
 

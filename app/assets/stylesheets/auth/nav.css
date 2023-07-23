@@ -6,6 +6,13 @@
   margin: auto;
 }
 
+.nav-main {
+  padding: 10px;
+  /* background-color: red; */
+  background-color: pink;
+  border-radius: 50%;
+}
+
 .mobile-header {
   display: none;
 }

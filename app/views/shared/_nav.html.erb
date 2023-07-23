@@ -1,11 +1,11 @@
 <header class='desktop-header'>
   <nav class="nav">
     <%= link_to categories_path, class: 'back-sign'  do%>
-      <%= image_tag 'everest' %>
+      <%= image_tag 'a', class: 'nav-main'%>
     <% end %>
     <ul>
       <li><%= link_to 'Categories', categories_path, class: 'home-sign' %></li>
-      <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %></li>
+      <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "submit-button" %></li>
     </ul>
   </nav>
 </header>
