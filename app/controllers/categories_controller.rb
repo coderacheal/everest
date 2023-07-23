@@ -2,7 +2,6 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit update destroy]
   before_action :set_stat_div, only: %i[index new edit update create]
 
-
   # GET /categories or /categories.json
   def index; end
 

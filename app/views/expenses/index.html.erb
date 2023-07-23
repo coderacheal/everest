@@ -9,7 +9,7 @@
               <p class='category-expense-name'><%= category_name = @category.name %> </p> 
               <div>
                 <p class='category-expense-amount'>Spent: <%= number_to_currency(@total_amount) %> </p> 
-                <p class='category-expense-amount'>Balance: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
+                <p class='category-expense-amount'>Bal: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
               </div>
               <div>
                 <% if @total_amount >= @category.limit %>
@@ -22,12 +22,13 @@
               </div>
             </div>
           </div>
+          <%=  link_to 'Back to Categories', categories_path, class: 'expenses-to-categories'%>
           <div id="categories" class="allCategoryExpenses">
               <% if @expenses.empty?%> 
                 <p class='no-categories'>You have no expenses for <b> <%= @category.name %> </b> </p>
               <% else %>
               <% @expenses.each do |expense| %>
-              <div class='eachCategory'>
+              <div class='eachExpense'>
                 <div>
                   <%= render expense %>
                 </div>

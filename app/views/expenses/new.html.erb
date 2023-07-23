@@ -6,7 +6,7 @@
         <div class="form-div">
            <%= flash[:notice] %>
           <%= form_with(model: @expense, url: category_expenses_path(user_id: current_user.id, category_id: @category.id), local: true, remote: true) do |form| %>
-            <h3 class='new-expense-ribbon'>Add expense for <b> <%= @category.name %> </b> </h3>
+            <h3 class='new-expense-ribbon form-ribbon'>Add expense for <b> <%= @category.name %> </b> </h3>
             <div class='expense-inputs'>
               <div>
                 <%= form.text_field :name, class: 'field expense-field', placeholder: 'Expense name', class: "form-input" %>
@@ -15,8 +15,8 @@
                 <%= form.number_field :amount, class: 'field expense-field', placeholder: 'Amount ($)', class: "form-input" %> <br>
               </div>
               <div class="submission-btn-div">
-                <%= link_to "Go Back", request.referrer || root_path, class: 'submit-button' %>
                 <%= form.submit class: "submit-button" %>
+                <%= link_to "Go Back", request.referrer || root_path, class: 'submit-button' %>
               </div>
             </div>
           <% end %>

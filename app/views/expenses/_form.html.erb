@@ -20,8 +20,9 @@
   </div>
 
   <div class="submission-btn-div">
-    <%= link_to "Go Back", request.referrer || root_path, class: 'submit-button' %>
     <%= form.submit class: "submit-button" %>
+    <%= link_to "Go Back", request.referrer || root_path, class: 'submit-button' %>
+
   </div>
   
 <% end %>

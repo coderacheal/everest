@@ -1,3 +1,23 @@
+@media (min-width: 320px) {
+  .generate-category-avatar {
+    height: 20px;
+    width: 20px;
+    padding: 0 0;
+  }
+
+  .expense-name {
+    font-size: 12px;
+  }
+
+  .expenses-to-categories {
+    font-size: 14px;
+  }
+
+  .category-expense-name {
+    font-size: 12px;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 500px) {
   /* CATEGORIES INDEX */
 
@@ -34,18 +54,10 @@
     margin-top: 20px;
   }
 
-  .profile-name-mobile {
-    /* background-color: yellow; */
-
-    /* display: flex; */
-  }
-
   .mobile-ul {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-
-    /* background-color: white; */
     width: 50%;
     padding: 0;
   }
@@ -57,7 +69,6 @@
   .inner-layer {
     width: 100%;
     height: 100%;
-    margin: auto;
   }
 
   .allCategories {
@@ -68,11 +79,19 @@
 
   .eachCategory {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 75% 25%;
     align-items: center;
     background-color: white;
     width: 95%;
-    padding: 10px 0;
+    padding: 15px 0;
+  }
+
+  .category-limit {
+    display: none;
+  }
+
+  .bal {
+    text-align: center;
   }
 
   .add-category-btn {
@@ -92,17 +111,12 @@
     width: 95%;
     font-size: 14px;
     margin-top: 10px;
-
-    /* font-weight: lighter; */
     margin-top: 50px;
-
-    /* text-align: right; */
   }
 
   .category-details {
     width: 90%;
     display: grid;
-    grid-template-columns: 100%;
     margin: auto;
     float: right;
   }
@@ -113,10 +127,10 @@
   }
 
   .delete-edit {
-    /* flex-direction: column; */
     display: flex;
-    width: 90%;
+    width: 70%;
     align-items: center;
+    margin: auto;
   }
 
   .edit-pen {
@@ -125,12 +139,15 @@
   }
 
   .limit-balance {
-    display: none;
+    display: block;
+    width: 50%;
+    margin: auto;
   }
 
   .cat-name-link {
-    font-size: 17px;
-    margin-top: 7px;
+    align-items: center;
+    width: 65%;
+    font-size: 14px;
     font-weight: bold;
   }
 
@@ -144,14 +161,13 @@
   }
 
   .generate-category-avatar {
-    padding: 7px 10px;
+    position: relative;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
     font-size: 15px;
     font-weight: bold;
-    height: 40%;
-    margin: auto;
-    align-self: center;
-    align-items: center;
-    text-align: center;
+    height: auto;
   }
 
   .notice {
@@ -161,6 +177,7 @@
   }
 
   .created {
+    display: none;
     font-size: 11px;
   }
 
@@ -168,8 +185,28 @@
     padding: 5px 0;
   }
 
-
   /* EXPENSES INDEX */
+
+  .allCategoryExpenses {
+    height: 60vh;
+  }
+
+  .eachExpense {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    background-color: white;
+    width: 95%;
+    padding: 15px 0;
+  }
+
+  .expense-name {
+    align-content: center;
+  }
+
+  .expense-amount {
+    font-size: 14px;
+  }
 
   .expense-and-total-amount {
     width: 80%;
@@ -179,13 +216,23 @@
     gap: 3%;
   }
 
+  .expenses-to-categories {
+    display: block;
+    float: right;
+    width: 40%;
+    text-decoration: none;
+    padding: 5px 0;
+    font-weight: bold;
+  }
+
   .add-expense-div {
     width: 100%;
   }
 
-  .category-expense-name {
-    font-size: 15px;
-    font-weight: bold;
+  .category-date {
+    align-self: center;
+    margin-left: 10px;
+    margin-top: 10px;
   }
 
   .category-expense-amount,
@@ -218,7 +265,8 @@
     background-color: white;
     width: 60%;
     padding: 30px;
-    height: 65vh;
+    margin: auto;
+    margin-top: 20vh;
   }
 
   .form-input {
@@ -247,5 +295,309 @@
     text-align: center;
     font-weight: bold;
     cursor: pointer;
+  }
+}
+
+/* 500 + media queries */
+
+@media (min-width: 501px) and (max-width: 768px) {
+  .created {
+    display: none;
+  }
+
+  .nav-main {
+    height: 30px;
+  }
+
+  .nav {
+    align-items: center;
+  }
+
+  /* CATEGORIES INDEX */
+
+  .allCategories {
+    width: 95%;
+    height: 37vh;
+  }
+
+  .eachCategory {
+    grid-template-columns: 75% 25%;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  .category-limit {
+    display: none;
+  }
+
+  .plus-and-text {
+    font-size: 14px;
+  }
+
+  .date-today-div {
+    width: 95%;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-top: 50px;
+  }
+
+  .category-details {
+    width: 90%;
+    display: grid;
+    margin: auto;
+    float: right;
+  }
+
+  .category-name-date {
+    display: flex;
+    gap: 0;
+  }
+
+  .edit-pen {
+    height: 10px;
+    padding: 7px;
+  }
+
+  .limit-balance {
+    display: block;
+    width: 60%;
+    margin: auto;
+  }
+
+  .bal {
+    text-align: center;
+  }
+
+  .cat-name-link {
+    align-items: center;
+    width: 65%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  .category_delete_botton {
+    background-color: aliceblue;
+    border: 0;
+    padding: 5px 7px;
+    border-radius: 10px;
+    color: rgb(110, 110, 110);
+  }
+
+  .generate-category-avatar {
+    position: relative;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .delete-edit {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+  }
+
+  .name-and-amt-spent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  /* EXPENSES INDEX */
+
+  .allCategoryExpenses {
+    height: 33vh;
+  }
+
+  .eachExpense {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    background-color: white;
+    width: 95%;
+    padding: 0;
+  }
+
+  .expense-name {
+    align-content: center;
+  }
+
+  .expense-amount {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .expense-and-total-amount {
+    width: 80%;
+    margin: auto;
+    padding: 15px 20px;
+    grid-template-columns: 30% 50% 20%;
+    gap: 3%;
+  }
+
+  .expenses-to-categories {
+    display: block;
+    float: right;
+    width: 50%;
+    text-decoration: none;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .add-expense-div {
+    width: 100%;
+  }
+
+  .category-date {
+    align-self: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .mobile-date {
+    display: none;
+  }
+
+  .category-expense-amount,
+  .limit-reached {
+    text-align: left;
+    font-size: 13px;
+    color: grey;
+  }
+
+  /* FORM DIV */
+
+  .form-div {
+    margin-top: 10vh;
+  }
+
+  .form-ribbon {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-card {
+    grid-template-columns: 70% 30%;
+  }
+
+  .quick-stats {
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .spent {
+    font-size: 10px;
+  }
+
+  .latest-category-ribbon {
+    font-size: 13px;
+  }
+
+  .category-name-date {
+    gap: 10px;
+  }
+
+  .small-fade {
+    font-size: 10px;
+  }
+
+  .generate-category-avatar {
+    padding: 10px;
+  }
+
+  .edit-pen {
+    padding: 5px;
+  }
+
+  .category_delete_botton {
+    padding: 5px 10px;
+  }
+
+  .delete-edit {
+    width: 100%;
+  }
+
+  .allCategories {
+    height: 50%;
+  }
+
+  /* expenses  */
+
+  .allCategoryExpenses {
+    height: 50%;
+  }
+
+  .category-expense-name {
+    font-size: 18px;
+  }
+
+  .expense-name {
+    font-size: 17px;
+  }
+
+  .add-expense-btn {
+    display: none;
+  }
+
+  .mobile-date {
+    font-size: 12px;
+  }
+
+  .submission-btn-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-name-date {
+    gap: 20px;
+  }
+
+  .small-fade {
+    font-size: 12px;
+  }
+
+  .generate-category-avatar {
+    padding: 10px;
+  }
+
+  .edit-pen {
+    padding: 10px;
+  }
+
+  .category_delete_botton {
+    padding: 10px;
+  }
+
+  .delete-edit {
+    width: 100%;
+  }
+
+  .allCategories {
+    height: 50%;
+  }
+
+  .add-expense-btn {
+    font-size: 14px;
+  }
+
+  .expense-name {
+    font-size: 17px;
+  }
+
+  .category-expense-name {
+    font-size: 18px;
   }
 }

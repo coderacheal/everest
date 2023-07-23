@@ -53,7 +53,6 @@ gem 'activestorage'
 
 # gem 'emojione'
 
-
 # Use Sass to process CSS
 # gem "sassc-rails"
 

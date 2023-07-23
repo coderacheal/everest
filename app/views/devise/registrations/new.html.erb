@@ -1,10 +1,10 @@
 <div class='session-body'>
   <div class='session-page'>
-    <div>
+    <div class="budget-lady-image">
       <%= image_tag 'budget.jpg', class: 'session-image' %>
     </div>
     <div class='session-form'>
-      <h2>Sign up</h2>
+      <h3 class="sign-up-ribbon">Sign up</h3>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         
         <div class="field">
@@ -35,7 +35,7 @@
 
         <% if resource.errors.any? %>
           <div class="error-messages">
-            <ul>
+            <ul class="error-ul">
               <% resource.errors.full_messages.each do |message| %>
                 <li style="color: red"><%= message %></li>
               <% end %>

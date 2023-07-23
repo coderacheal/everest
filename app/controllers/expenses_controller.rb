@@ -90,6 +90,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
     @expense.destroy
     redirect_to category_expense_path
+    flash[:notice] = 'Expense deleted 👋 !'
   end
 
   # Use callbacks to share common setup or constraints between actions.
