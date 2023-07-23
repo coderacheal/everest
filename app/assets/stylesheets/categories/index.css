@@ -152,6 +152,11 @@
   margin: auto;
 }
 
+.category_name {
+  color: rgb(95, 93, 93);
+  text-decoration: none;
+}
+
 .category_name:hover {
   text-decoration: underline;
   transition: 1s;
@@ -260,11 +265,6 @@
 
 .type-and-number:hover {
   background-color: rgb(214, 246, 214);
-}
-
-.category_name {
-  color: rgb(95, 93, 93);
-  text-decoration: none;
 }
 
 .latest-categories {
