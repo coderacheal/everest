@@ -299,3 +299,207 @@
     cursor: pointer;
   }
 }
+
+/* 500 + media queries */
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .created {
+    display: none;
+  }
+
+  .nav-main {
+    height: 30px;
+  }
+
+  .nav {
+    align-items: center;
+  }
+
+  /* CATEGORIES INDEX */
+
+  .allCategories {
+    width: 95%;
+    height: 37vh;
+  }
+
+  .eachCategory {
+    grid-template-columns: 75% 25%;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  .category-limit {
+    display: none;
+  }
+
+
+  /* .add-category-btn {
+    padding: 5px 10px;
+    border-radius: 9px;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(123, 123, 123);
+    margin-right: 10px;
+  } */
+
+  .plus-and-text {
+    font-size: 14px;
+  }
+
+  .date-today-div {
+    width: 95%;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-top: 50px;
+  }
+
+  .category-details {
+    width: 90%;
+    display: grid;
+    margin: auto;
+    float: right;
+  }
+
+  .category-name-date {
+    display: flex;
+    gap: 0;
+  }
+
+  .edit-pen {
+    height: 10px;
+    padding: 7px;
+  }
+
+  .limit-balance {
+    display: block;
+    width: 60%;
+    margin: auto;
+  }
+
+  
+  .bal {
+    text-align: center;
+    /* background-color: red; */
+  }
+
+  .cat-name-link {
+    align-items: center;
+    width: 65%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  .category_delete_botton {
+    background-color: aliceblue;
+    border: 0;
+    padding: 5px 7px;
+    border-radius: 10px;
+    color: rgb(110, 110, 110);
+  }
+
+  .generate-category-avatar {
+    position: relative;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .delete-edit {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+  }
+
+  .name-and-amt-spent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+
+  /* EXPENSES INDEX */
+
+  .allCategoryExpenses {
+    height: 33vh;
+  }
+
+  .eachExpense {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    background-color: white;
+    width: 95%;
+    padding:  0;
+  }
+
+  .expense-name {
+    align-content: center;
+  }
+
+  .expense-amount {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .expense-and-total-amount {
+    width: 80%;
+    margin: auto;
+    padding: 15px 20px;
+    grid-template-columns: 30% 50% 20%;
+    gap: 3%;
+  }
+
+  .expenses-to-categories {
+    display: block;
+    float: right;
+    width: 50%;
+    text-decoration: none;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .add-expense-div {
+    width: 100%;
+  }
+
+  .category-date {
+    align-self: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .mobile-date {
+    display: none;
+  }
+
+  .category-expense-amount,
+  .limit-reached {
+    text-align: left;
+    font-size: 13px;
+    color: grey;
+  }
+
+ 
+  /* FORM DIV */
+
+  .form-div {
+    /* width: 60%; */
+    margin-top: 10vh;
+  }
+
+  .form-ribbon {
+    font-size: 18px;
+  }
+
+
+
+}

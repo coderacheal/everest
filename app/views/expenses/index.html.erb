@@ -9,7 +9,7 @@
               <p class='category-expense-name'><%= category_name = @category.name %> </p> 
               <div>
                 <p class='category-expense-amount'>Spent: <%= number_to_currency(@total_amount) %> </p> 
-                <p class='category-expense-amount'>Balance: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
+                <p class='category-expense-amount'>Bal: <%= number_to_currency(@category.limit - @total_amount) %> </p> 
               </div>
               <div>
                 <% if @total_amount >= @category.limit %>
