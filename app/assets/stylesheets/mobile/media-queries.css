@@ -170,7 +170,6 @@
     height: auto;
   }
 
-
   .notice {
     font-size: 11px;
     position: absolute;
@@ -302,7 +301,7 @@
 
 /* 500 + media queries */
 
-@media (min-width: 501px) and (max-width: 1024px) {
+@media (min-width: 501px) and (max-width: 768px) {
   .created {
     display: none;
   }
@@ -331,16 +330,6 @@
   .category-limit {
     display: none;
   }
-
-
-  /* .add-category-btn {
-    padding: 5px 10px;
-    border-radius: 9px;
-    font-size: 15px;
-    text-decoration: none;
-    color: rgb(123, 123, 123);
-    margin-right: 10px;
-  } */
 
   .plus-and-text {
     font-size: 14px;
@@ -376,10 +365,9 @@
     margin: auto;
   }
 
-  
+
   .bal {
     text-align: center;
-    /* background-color: red; */
   }
 
   .cat-name-link {
@@ -437,7 +425,7 @@
     align-items: center;
     background-color: white;
     width: 95%;
-    padding:  0;
+    padding: 0;
   }
 
   .expense-name {
@@ -488,18 +476,134 @@
     color: grey;
   }
 
- 
+
   /* FORM DIV */
 
   .form-div {
-    /* width: 60%; */
     margin-top: 10vh;
   }
 
   .form-ribbon {
     font-size: 18px;
   }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-card {
+    grid-template-columns: 70% 30%;
+  }
+
+  .quick-stats {
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .spent {
+    font-size: 10px;
+  }
+
+  .latest-category-ribbon {
+    font-size: 13px;
+  }
+
+  .category-name-date {
+    gap: 10px;
+  }
+
+  .small-fade {
+    font-size: 10px;
+  }
+
+  .generate-category-avatar {
+    padding: 10px;
+  }
+
+  .edit-pen {
+    padding: 5px;
+  }
+
+  .category_delete_botton {
+    padding: 5px 10px;
+  }
+
+  .delete-edit {
+    width: 100%;
+  }
+
+  .allCategories {
+    height: 50%;
+  }
 
 
+  /* expenses  */
 
+  .allCategoryExpenses {
+    height: 50%;
+  }
+
+  .category-expense-name {
+    font-size: 18px;
+  }
+
+  .expense-name {
+    font-size: 17px;
+  }
+
+  .add-expense-btn {
+    display: none;
+  }
+
+
+  .mobile-date {
+    font-size: 12px;
+  }
+
+  .submission-btn-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-name-date {
+    gap: 20px;
+  }
+
+  .small-fade {
+    font-size: 12px;
+  }
+
+  .generate-category-avatar {
+    padding: 10px;
+  }
+
+  .edit-pen {
+    padding: 10px;
+  }
+
+  .category_delete_botton {
+    padding: 10px;
+  }
+
+  .delete-edit {
+    width: 100%;
+  }
+
+  .allCategories {
+    height: 50%;
+  }
+
+  .add-expense-btn {
+    font-size: 14px;
+  }
+
+  .expense-name {
+    font-size: 17px;
+  }
+
+  .category-expense-name {
+    font-size: 18px;
+  }
 }

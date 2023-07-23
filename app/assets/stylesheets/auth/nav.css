@@ -1,6 +1,5 @@
 .nav {
-  display: grid;
-  grid-template-columns: 60% 40%;
+  display: flex;
   justify-content: space-between;
   width: 75%;
   margin: auto;
@@ -63,7 +62,6 @@
 #huntr-react-container-2 {
   display: none;
 }
-
 
 /* Mouse Handle */
 ::-webkit-scrollbar-thumb {
