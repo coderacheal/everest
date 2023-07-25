@@ -4,7 +4,8 @@
   <h1><b>Everest</b></h1>
 </div>
 
-![image](https://github.com/coderacheal/everest/assets/97846040/bb175304-21d5-433d-97be-c41df7748b20)
+![signup-everest](https://github.com/coderacheal/everest/assets/97846040/151b6cd3-5ae7-43dc-a9f1-1f695a518eb1)
+
 
 
 <!-- TABLE OF CONTENTS -->
