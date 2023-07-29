@@ -1,0 +1,18 @@
+databases:
+  - name: everest
+    databaseName: everest_oz0g
+    user: everest_oz0g_user
+
+services:
+  - type: web
+    name: Everes_App
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: everest_oz0g
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
