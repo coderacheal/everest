@@ -16,7 +16,11 @@
       <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %></li>
       <div class="profile-name-mobile"> 
         <% if user_signed_in? %>
-          <%= image_tag(current_user.avatar, class: "avatar") if current_user.avatar.attached? %>
+          <% if current_user.avatar.attached? %>
+            <%= image_tag(current_user.avatar, class: "avatar") %>
+          <% else %>
+            <%= image_tag("profile.png", class: "avatar") %>
+          <% end %>
         <% end %>
         <li class="username small-fade"><%= current_user.name %></li>
       </div>

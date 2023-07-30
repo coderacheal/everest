@@ -2,11 +2,10 @@
   display: flex;
   margin: 0;
   padding: 0;
-  background-image: url('/assets/bubbles.png');
+  background-image: url(bubbles.png);
   height: 100vh;
   object-fit: cover;
   align-items: center;
-  /* background-color: white; */
 }
 
 .session-page {
