@@ -4,9 +4,9 @@
   padding: 0;
   background-image: url('/assets/bubbles.png');
   height: 100vh;
-  background-color: wheat;
   object-fit: cover;
   align-items: center;
+  /* background-color: white; */
 }
 
 .session-page {

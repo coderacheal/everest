@@ -48,6 +48,8 @@ gem 'bootsnap', require: false
 
 gem 'activestorage'
 
+gem 'image_optim'
+
 # gem 'emoji-picker'
 # gem 'emojionearea-rails'
 

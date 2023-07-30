@@ -1,7 +1,7 @@
 <header class='desktop-header'>
   <nav class="nav">
     <%= link_to categories_path, class: 'back-sign'  do%>
-      <%= image_tag 'logo', class: 'nav-main'%>
+      <%= image_tag 'logo.png', class: 'nav-main'%>
     <% end %>
     <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "submit-button" %>
   </nav>
@@ -10,7 +10,7 @@
 <header class='mobile-header'>
   <nav class="mobile-nav">
     <%= link_to categories_path, class: 'back-sign'  do%>
-      <%= image_tag 'logo', class: 'everest-logo nav-main' %>
+      <%= image_tag 'logo.png', class: 'everest-logo nav-main' %>
     <% end %>
     <ul class='mobile-ul'>
       <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-sign-out" %></li>
