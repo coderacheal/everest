@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :categories
   has_many :expenses
-  has_one_attached :avatar
-
+  mount_uploader :avatar, ImageUploader
   validates :name, length: { maximum: 50 }
+
 end

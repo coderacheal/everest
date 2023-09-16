@@ -14,14 +14,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    # Customize the redirect path based on your requirements
-    # For example:
     if resource.is_a?(User)
-      # Redirect to a specific path for a user
-      # user_path(resource)
       categories_path
     else
-      # Redirect to a different path for other resources
       root_path
     end
   end

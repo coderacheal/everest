@@ -33,7 +33,7 @@
 
 # Everest <a name="about-project"></a>
 
-**EVerest** is a finance app that enables you to track your expenses based on the type of expenses you define. Complete with authentication, it helps you stay on top of the dollar
+**Everest** is a finance app that enables you to track your expenses based on the type of expenses you define. Complete with authentication, it helps you stay on top of the dollar
 
 ## 🛠 Built With <a name="built-with"></a>
 
