@@ -50,7 +50,7 @@ gem 'activestorage'
 
 gem 'image_optim'
 
-# gem 'carrierwave'
+gem 'carrierwave'
 
 # gem 'emoji-picker'
 # gem 'emojionearea-rails'
