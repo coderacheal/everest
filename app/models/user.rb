@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :expenses
   mount_uploader :avatar, ImageUploader
   validates :name, length: { maximum: 50 }
-
 end
